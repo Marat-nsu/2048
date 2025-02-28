@@ -1,0 +1,4 @@
+.vscode/launch.json
+.vscode/tasks.json
+*.img
+build
