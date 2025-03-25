@@ -59,18 +59,14 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <a name="clabel" val=""/>
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(120,310)" to="(470,310)"/>
     <wire from="(450,250)" to="(450,270)"/>
+    <wire from="(120,270)" to="(450,270)"/>
     <wire from="(480,250)" to="(480,330)"/>
     <wire from="(120,330)" to="(480,330)"/>
-    <wire from="(120,310)" to="(470,310)"/>
+    <wire from="(470,250)" to="(470,310)"/>
     <wire from="(120,290)" to="(460,290)"/>
     <wire from="(460,250)" to="(460,290)"/>
-    <wire from="(120,270)" to="(450,270)"/>
-    <wire from="(470,250)" to="(470,310)"/>
-    <comp lib="0" loc="(120,330)" name="Constant">
-      <a name="width" val="19"/>
-      <a name="value" val="0x1fc0"/>
-    </comp>
     <comp lib="5" loc="(450,250)" name="DotMatrix">
       <a name="matrixcols" val="19"/>
       <a name="matrixrows" val="19"/>
@@ -82,6 +78,10 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="0" loc="(120,270)" name="Constant">
       <a name="width" val="19"/>
       <a name="value" val="0x0"/>
+    </comp>
+    <comp lib="0" loc="(120,330)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0x1fc0"/>
     </comp>
     <comp lib="0" loc="(120,310)" name="Constant">
       <a name="width" val="19"/>
@@ -98,21 +98,21 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <rect fill="none" height="30" stroke="#000000" stroke-width="2" width="30" x="50" y="50"/>
       <circ-anchor facing="east" height="6" width="6" x="47" y="47"/>
     </appear>
+    <wire from="(120,310)" to="(470,310)"/>
     <wire from="(450,250)" to="(450,270)"/>
+    <wire from="(120,270)" to="(450,270)"/>
     <wire from="(480,250)" to="(480,330)"/>
     <wire from="(120,330)" to="(480,330)"/>
-    <wire from="(120,310)" to="(470,310)"/>
+    <wire from="(470,250)" to="(470,310)"/>
     <wire from="(120,290)" to="(460,290)"/>
     <wire from="(460,250)" to="(460,290)"/>
-    <wire from="(120,270)" to="(450,270)"/>
-    <wire from="(470,250)" to="(470,310)"/>
-    <comp lib="0" loc="(120,270)" name="Constant">
-      <a name="width" val="19"/>
-      <a name="value" val="0x8c0"/>
-    </comp>
     <comp lib="0" loc="(120,290)" name="Constant">
       <a name="width" val="19"/>
       <a name="value" val="0x1140"/>
+    </comp>
+    <comp lib="0" loc="(120,270)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0x8c0"/>
     </comp>
     <comp lib="0" loc="(120,330)" name="Constant">
       <a name="width" val="19"/>
@@ -144,10 +144,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="matrixcols" val="19"/>
       <a name="matrixrows" val="19"/>
     </comp>
-    <comp lib="0" loc="(120,290)" name="Constant">
-      <a name="width" val="19"/>
-      <a name="value" val="0x1240"/>
-    </comp>
     <comp lib="0" loc="(120,310)" name="Constant">
       <a name="width" val="19"/>
       <a name="value" val="0x1240"/>
@@ -155,6 +151,10 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="0" loc="(120,270)" name="Constant">
       <a name="width" val="19"/>
       <a name="value" val="0x880"/>
+    </comp>
+    <comp lib="0" loc="(120,290)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0x1240"/>
     </comp>
     <comp lib="0" loc="(120,330)" name="Constant">
       <a name="width" val="19"/>
@@ -174,6 +174,18 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(470,250)" to="(470,310)"/>
     <wire from="(120,290)" to="(460,290)"/>
     <wire from="(460,250)" to="(460,290)"/>
+    <comp lib="5" loc="(450,250)" name="DotMatrix">
+      <a name="matrixcols" val="19"/>
+      <a name="matrixrows" val="19"/>
+    </comp>
+    <comp lib="0" loc="(120,290)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0x200"/>
+    </comp>
+    <comp lib="0" loc="(120,330)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0x1fc0"/>
+    </comp>
     <comp lib="0" loc="(120,310)" name="Constant">
       <a name="width" val="19"/>
       <a name="value" val="0x200"/>
@@ -181,18 +193,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="0" loc="(120,270)" name="Constant">
       <a name="width" val="19"/>
       <a name="value" val="0x1e00"/>
-    </comp>
-    <comp lib="0" loc="(120,290)" name="Constant">
-      <a name="width" val="19"/>
-      <a name="value" val="0x200"/>
-    </comp>
-    <comp lib="5" loc="(450,250)" name="DotMatrix">
-      <a name="matrixcols" val="19"/>
-      <a name="matrixrows" val="19"/>
-    </comp>
-    <comp lib="0" loc="(120,330)" name="Constant">
-      <a name="width" val="19"/>
-      <a name="value" val="0x1fc0"/>
     </comp>
   </circuit>
   <circuit name="5">
@@ -276,25 +276,25 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(470,250)" to="(470,310)"/>
     <wire from="(120,290)" to="(460,290)"/>
     <wire from="(460,250)" to="(460,290)"/>
-    <comp lib="0" loc="(120,310)" name="Constant">
+    <comp lib="0" loc="(120,270)" name="Constant">
       <a name="width" val="19"/>
-      <a name="value" val="0x1200"/>
+      <a name="value" val="0x1000"/>
     </comp>
     <comp lib="0" loc="(120,330)" name="Constant">
       <a name="width" val="19"/>
       <a name="value" val="0x1c00"/>
     </comp>
-    <comp lib="0" loc="(120,270)" name="Constant">
+    <comp lib="0" loc="(120,290)" name="Constant">
       <a name="width" val="19"/>
-      <a name="value" val="0x1000"/>
+      <a name="value" val="0x11c0"/>
     </comp>
     <comp lib="5" loc="(450,250)" name="DotMatrix">
       <a name="matrixcols" val="19"/>
       <a name="matrixrows" val="19"/>
     </comp>
-    <comp lib="0" loc="(120,290)" name="Constant">
+    <comp lib="0" loc="(120,310)" name="Constant">
       <a name="width" val="19"/>
-      <a name="value" val="0x11c0"/>
+      <a name="value" val="0x1200"/>
     </comp>
   </circuit>
   <circuit name="8">
@@ -310,9 +310,13 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(470,250)" to="(470,310)"/>
     <wire from="(120,290)" to="(460,290)"/>
     <wire from="(460,250)" to="(460,290)"/>
-    <comp lib="0" loc="(120,330)" name="Constant">
+    <comp lib="0" loc="(120,270)" name="Constant">
       <a name="width" val="19"/>
       <a name="value" val="0xd80"/>
+    </comp>
+    <comp lib="0" loc="(120,310)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0x1240"/>
     </comp>
     <comp lib="0" loc="(120,290)" name="Constant">
       <a name="width" val="19"/>
@@ -322,13 +326,9 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="matrixcols" val="19"/>
       <a name="matrixrows" val="19"/>
     </comp>
-    <comp lib="0" loc="(120,270)" name="Constant">
+    <comp lib="0" loc="(120,330)" name="Constant">
       <a name="width" val="19"/>
       <a name="value" val="0xd80"/>
-    </comp>
-    <comp lib="0" loc="(120,310)" name="Constant">
-      <a name="width" val="19"/>
-      <a name="value" val="0x1240"/>
     </comp>
   </circuit>
   <circuit name="9">
@@ -344,10 +344,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(470,250)" to="(470,310)"/>
     <wire from="(120,290)" to="(460,290)"/>
     <wire from="(460,250)" to="(460,290)"/>
-    <comp lib="5" loc="(450,250)" name="DotMatrix">
-      <a name="matrixcols" val="19"/>
-      <a name="matrixrows" val="19"/>
-    </comp>
     <comp lib="0" loc="(120,310)" name="Constant">
       <a name="width" val="19"/>
       <a name="value" val="0x1280"/>
@@ -360,9 +356,47 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="width" val="19"/>
       <a name="value" val="0xf00"/>
     </comp>
+    <comp lib="5" loc="(450,250)" name="DotMatrix">
+      <a name="matrixcols" val="19"/>
+      <a name="matrixrows" val="19"/>
+    </comp>
     <comp lib="0" loc="(120,270)" name="Constant">
       <a name="width" val="19"/>
       <a name="value" val="0xc00"/>
+    </comp>
+  </circuit>
+  <circuit name="0">
+    <a name="circuit" val="0"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(120,310)" to="(470,310)"/>
+    <wire from="(450,250)" to="(450,270)"/>
+    <wire from="(120,270)" to="(450,270)"/>
+    <wire from="(480,250)" to="(480,330)"/>
+    <wire from="(120,330)" to="(480,330)"/>
+    <wire from="(470,250)" to="(470,310)"/>
+    <wire from="(120,290)" to="(460,290)"/>
+    <wire from="(460,250)" to="(460,290)"/>
+    <comp lib="0" loc="(120,270)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0xf80"/>
+    </comp>
+    <comp lib="0" loc="(120,310)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0x1040"/>
+    </comp>
+    <comp lib="0" loc="(120,330)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0xf80"/>
+    </comp>
+    <comp lib="0" loc="(120,290)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0x1040"/>
+    </comp>
+    <comp lib="5" loc="(450,250)" name="DotMatrix">
+      <a name="matrixcols" val="19"/>
+      <a name="matrixrows" val="19"/>
     </comp>
   </circuit>
 </project>
