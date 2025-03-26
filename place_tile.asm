@@ -6,7 +6,7 @@ rsect place_tile
 macro mod/2
 	while
 		cmp $1, $2
-	stays gt
+	stays ge
 		sub $1, $2, $1
 	wend
 mend
@@ -35,8 +35,8 @@ choose_tile>
 	ldi r1, random
 	ldw r1, r1
 	shra r1
-	ldi r1, 1
-	addc r0, r1, r0 # C is set to 0 or 1, we add 1 to get valid power of 2
+	addc r0, r0, r0 
+	add r0, 1 # C is set to 0 or 1, we add 1 to get valid power of 2
 	rts
 
 place_tile>
@@ -53,7 +53,7 @@ place_tile>
 	ldi r4, matrix
 	ldi r5, 0 # amount of empty tiles
 	while
-		cmp r3, 2
+		cmp r3, 32
 	stays lt
 		if
 			ldw r4, r3, r6
