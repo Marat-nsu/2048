@@ -38,9 +38,11 @@ default_handler4>
 rsect main
 
 place_tile: ext
+move_left: ext
 main>
 	jsr place_tile
     jsr place_tile
+    jsr move_left
 	halt
     # your code here
 
