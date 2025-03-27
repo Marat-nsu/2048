@@ -101,7 +101,7 @@
             const columns = [];
             for (let col = 0; col < 19; col++) {
                 let binary = '';
-                for (let row = 18; row >= 0; row--) {
+                for (let row = 0; row < 19; row++) {
                     const cell = document.querySelector(`.cell[data-row="${row}"][data-col="${col}"]`);
                     binary += cell.classList.contains('black') ? '1' : '0';
                 }
