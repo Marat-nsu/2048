@@ -126,37 +126,93 @@
     <wire from="(70,250)" to="(170,250)"/>
     <wire from="(70,330)" to="(170,330)"/>
     <wire from="(70,410)" to="(170,410)"/>
+    <comp lib="0" loc="(70,70)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0x0"/>
+    </comp>
+    <comp lib="0" loc="(70,90)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0x0"/>
+    </comp>
+    <comp lib="0" loc="(70,110)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0x0"/>
+    </comp>
+    <comp lib="0" loc="(70,130)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0x0"/>
+    </comp>
+    <comp lib="0" loc="(70,150)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0x0"/>
+    </comp>
+    <comp lib="0" loc="(70,170)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0x10"/>
+    </comp>
+    <comp lib="0" loc="(70,190)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0x3030"/>
+    </comp>
+    <comp lib="0" loc="(70,210)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0x4050"/>
+    </comp>
+    <comp lib="0" loc="(70,230)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0x8090"/>
+    </comp>
+    <comp lib="0" loc="(70,250)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0x8110"/>
+    </comp>
+    <comp lib="0" loc="(70,270)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0x8210"/>
+    </comp>
+    <comp lib="0" loc="(70,290)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0x4410"/>
+    </comp>
+    <comp lib="0" loc="(70,310)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0x7810"/>
+    </comp>
+    <comp lib="0" loc="(70,330)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0x10"/>
+    </comp>
+    <comp lib="0" loc="(70,350)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0x0"/>
+    </comp>
+    <comp lib="0" loc="(70,370)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0x0"/>
+    </comp>
+    <comp lib="0" loc="(70,390)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0x0"/>
+    </comp>
+    <comp lib="0" loc="(70,410)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0x0"/>
+    </comp>
+    <comp lib="0" loc="(70,430)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0x0"/>
+    </comp>
     <comp lib="0" loc="(350,130)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="width" val="19"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="0" loc="(70,390)" name="Constant">
-      <a name="width" val="19"/>
-      <a name="value" val="0x0"/>
-    </comp>
-    <comp lib="0" loc="(70,270)" name="Constant">
-      <a name="width" val="19"/>
-      <a name="value" val="0x8210"/>
-    </comp>
     <comp lib="0" loc="(170,410)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="width" val="19"/>
       <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="0" loc="(70,110)" name="Constant">
-      <a name="width" val="19"/>
-      <a name="value" val="0x0"/>
-    </comp>
-    <comp lib="0" loc="(70,190)" name="Constant">
-      <a name="width" val="19"/>
-      <a name="value" val="0x3030"/>
-    </comp>
-    <comp lib="0" loc="(70,90)" name="Constant">
-      <a name="width" val="19"/>
-      <a name="value" val="0x0"/>
     </comp>
     <comp lib="0" loc="(80,150)" name="Pin">
       <a name="facing" val="west"/>
@@ -169,18 +225,6 @@
       <a name="output" val="true"/>
       <a name="width" val="19"/>
       <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="0" loc="(70,150)" name="Constant">
-      <a name="width" val="19"/>
-      <a name="value" val="0x0"/>
-    </comp>
-    <comp lib="0" loc="(70,70)" name="Constant">
-      <a name="width" val="19"/>
-      <a name="value" val="0x0"/>
-    </comp>
-    <comp lib="0" loc="(70,350)" name="Constant">
-      <a name="width" val="19"/>
-      <a name="value" val="0x0"/>
     </comp>
     <comp lib="0" loc="(80,390)" name="Pin">
       <a name="facing" val="west"/>
@@ -200,19 +244,11 @@
       <a name="width" val="19"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="0" loc="(70,130)" name="Constant">
-      <a name="width" val="19"/>
-      <a name="value" val="0x0"/>
-    </comp>
     <comp lib="0" loc="(170,330)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="width" val="19"/>
       <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="0" loc="(70,290)" name="Constant">
-      <a name="width" val="19"/>
-      <a name="value" val="0x4410"/>
     </comp>
     <comp lib="0" loc="(350,370)" name="Pin">
       <a name="facing" val="west"/>
@@ -220,23 +256,11 @@
       <a name="width" val="19"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="0" loc="(70,210)" name="Constant">
-      <a name="width" val="19"/>
-      <a name="value" val="0x4050"/>
-    </comp>
     <comp lib="0" loc="(350,210)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="width" val="19"/>
       <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="0" loc="(70,250)" name="Constant">
-      <a name="width" val="19"/>
-      <a name="value" val="0x8110"/>
-    </comp>
-    <comp lib="0" loc="(70,370)" name="Constant">
-      <a name="width" val="19"/>
-      <a name="value" val="0x0"/>
     </comp>
     <comp lib="0" loc="(260,110)" name="Pin">
       <a name="facing" val="west"/>
@@ -256,23 +280,11 @@
       <a name="width" val="19"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="0" loc="(70,330)" name="Constant">
-      <a name="width" val="19"/>
-      <a name="value" val="0x10"/>
-    </comp>
     <comp lib="0" loc="(170,170)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="width" val="19"/>
       <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="0" loc="(70,410)" name="Constant">
-      <a name="width" val="19"/>
-      <a name="value" val="0x0"/>
-    </comp>
-    <comp lib="0" loc="(70,170)" name="Constant">
-      <a name="width" val="19"/>
-      <a name="value" val="0x10"/>
     </comp>
     <comp lib="0" loc="(260,270)" name="Pin">
       <a name="facing" val="west"/>
@@ -286,10 +298,6 @@
       <a name="width" val="19"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="0" loc="(70,310)" name="Constant">
-      <a name="width" val="19"/>
-      <a name="value" val="0x7810"/>
-    </comp>
     <comp lib="0" loc="(80,310)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
@@ -299,19 +307,11 @@
     <comp lib="6" loc="(45,61)" name="Text">
       <a name="text" val="2"/>
     </comp>
-    <comp lib="0" loc="(70,430)" name="Constant">
-      <a name="width" val="19"/>
-      <a name="value" val="0x0"/>
-    </comp>
     <comp lib="0" loc="(170,250)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="width" val="19"/>
       <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="0" loc="(70,230)" name="Constant">
-      <a name="width" val="19"/>
-      <a name="value" val="0x8090"/>
     </comp>
     <comp lib="0" loc="(260,430)" name="Pin">
       <a name="facing" val="west"/>
