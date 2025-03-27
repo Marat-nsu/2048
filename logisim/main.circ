@@ -166,6 +166,7 @@
     <wire from="(130,610)" to="(130,640)"/>
     <wire from="(550,1830)" to="(550,1850)"/>
     <wire from="(810,1400)" to="(830,1400)"/>
+    <wire from="(240,750)" to="(240,850)"/>
     <wire from="(1550,710)" to="(1560,710)"/>
     <wire from="(930,1840)" to="(950,1840)"/>
     <wire from="(490,1400)" to="(510,1400)"/>
@@ -217,6 +218,7 @@
     <wire from="(320,770)" to="(320,790)"/>
     <wire from="(640,1180)" to="(680,1180)"/>
     <wire from="(860,1400)" to="(900,1400)"/>
+    <wire from="(600,570)" to="(600,600)"/>
     <wire from="(1060,1830)" to="(1060,1840)"/>
     <wire from="(940,1390)" to="(940,1410)"/>
     <wire from="(720,1170)" to="(720,1190)"/>
@@ -313,7 +315,6 @@
     <wire from="(1010,1840)" to="(1020,1840)"/>
     <wire from="(1050,1400)" to="(1060,1400)"/>
     <wire from="(320,1620)" to="(340,1620)"/>
-    <wire from="(20,360)" to="(40,360)"/>
     <wire from="(110,450)" to="(130,450)"/>
     <wire from="(410,1400)" to="(420,1400)"/>
     <wire from="(470,1620)" to="(480,1620)"/>
@@ -358,6 +359,7 @@
     <wire from="(1510,710)" to="(1520,710)"/>
     <wire from="(1320,680)" to="(1330,680)"/>
     <wire from="(930,1400)" to="(950,1400)"/>
+    <wire from="(580,570)" to="(600,570)"/>
     <wire from="(1020,1180)" to="(1030,1180)"/>
     <wire from="(710,1180)" to="(730,1180)"/>
     <wire from="(210,680)" to="(230,680)"/>
@@ -418,6 +420,7 @@
     <wire from="(690,1620)" to="(700,1620)"/>
     <wire from="(530,1620)" to="(540,1620)"/>
     <wire from="(570,1180)" to="(580,1180)"/>
+    <wire from="(600,570)" to="(610,570)"/>
     <wire from="(730,1830)" to="(730,1840)"/>
     <wire from="(710,1170)" to="(710,1180)"/>
     <wire from="(990,1850)" to="(1040,1850)"/>
@@ -492,7 +495,6 @@
     <wire from="(1540,690)" to="(1540,750)"/>
     <wire from="(1600,710)" to="(1610,710)"/>
     <wire from="(470,1180)" to="(480,1180)"/>
-    <wire from="(240,790)" to="(250,790)"/>
     <wire from="(310,1180)" to="(320,1180)"/>
     <wire from="(910,1620)" to="(920,1620)"/>
     <wire from="(950,1180)" to="(960,1180)"/>
@@ -531,6 +533,7 @@
     <wire from="(990,1390)" to="(990,1410)"/>
     <wire from="(1000,1840)" to="(1010,1840)"/>
     <wire from="(370,1840)" to="(390,1840)"/>
+    <wire from="(20,370)" to="(40,370)"/>
     <wire from="(360,1840)" to="(370,1840)"/>
     <wire from="(400,1400)" to="(410,1400)"/>
     <wire from="(460,1620)" to="(470,1620)"/>
@@ -576,7 +579,6 @@
     <wire from="(540,1180)" to="(560,1180)"/>
     <wire from="(600,600)" to="(620,600)"/>
     <wire from="(1070,1400)" to="(1080,1400)"/>
-    <wire from="(580,570)" to="(610,570)"/>
     <wire from="(390,1840)" to="(400,1840)"/>
     <wire from="(940,670)" to="(940,730)"/>
     <wire from="(910,1400)" to="(920,1400)"/>
@@ -652,6 +654,7 @@
     <wire from="(400,1830)" to="(400,1840)"/>
     <wire from="(380,1630)" to="(500,1630)"/>
     <wire from="(240,1830)" to="(240,1840)"/>
+    <wire from="(240,870)" to="(240,880)"/>
     <wire from="(340,1610)" to="(340,1620)"/>
     <wire from="(280,1390)" to="(280,1410)"/>
     <wire from="(640,1840)" to="(680,1840)"/>
@@ -862,7 +865,6 @@
     <wire from="(1520,710)" to="(1530,710)"/>
     <wire from="(210,1620)" to="(240,1620)"/>
     <wire from="(1050,1840)" to="(1060,1840)"/>
-    <wire from="(240,750)" to="(240,790)"/>
     <wire from="(390,1180)" to="(400,1180)"/>
     <wire from="(350,1620)" to="(360,1620)"/>
     <wire from="(410,1840)" to="(420,1840)"/>
@@ -875,94 +877,19 @@
     <wire from="(510,1620)" to="(520,1620)"/>
     <wire from="(610,1400)" to="(620,1400)"/>
     <wire from="(570,1840)" to="(580,1840)"/>
-    <comp lib="6" loc="(1057,446)" name="Text">
-      <a name="text" val="сколько у нас памяти?"/>
-    </comp>
-    <comp lib="5" loc="(900,1390)" name="DotMatrix">
-      <a name="matrixcols" val="19"/>
-      <a name="matrixrows" val="19"/>
-      <a name="color" val="#90ff0e"/>
-    </comp>
-    <comp lib="5" loc="(240,1830)" name="DotMatrix">
-      <a name="matrixcols" val="19"/>
-      <a name="matrixrows" val="19"/>
-      <a name="color" val="#90ff0e"/>
-    </comp>
-    <comp lib="5" loc="(950,900)" name="Hex Digit Display">
-      <a name="color" val="#f0ab1d"/>
-    </comp>
     <comp lib="0" loc="(530,620)" name="Tunnel">
       <a name="facing" val="north"/>
       <a name="label" val="read"/>
       <a name="labelfont" val="SansSerif plain 9"/>
     </comp>
-    <comp lib="6" loc="(767,881)" name="Text">
-      <a name="text" val="счет"/>
-      <a name="font" val="SansSerif plain 26"/>
-    </comp>
-    <comp lib="5" loc="(460,1170)" name="DotMatrix">
-      <a name="matrixcols" val="19"/>
-      <a name="matrixrows" val="19"/>
-      <a name="color" val="#90ff0e"/>
-    </comp>
-    <comp lib="0" loc="(210,1180)" name="Power">
-      <a name="width" val="19"/>
-    </comp>
-    <comp lib="0" loc="(1130,1410)" name="Ground">
-      <a name="width" val="19"/>
-    </comp>
-    <comp lib="0" loc="(110,790)" name="Clock">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="0" loc="(840,730)" name="Ground">
-      <a name="width" val="19"/>
-    </comp>
-    <comp lib="6" loc="(148,536)" name="Text">
-      <a name="text" val="Garvard architecture"/>
-      <a name="font" val="SansSerif plain 22"/>
-    </comp>
-    <comp lib="0" loc="(1320,740)" name="Constant">
-      <a name="width" val="19"/>
-      <a name="value" val="0xf80"/>
-    </comp>
-    <comp lib="0" loc="(1320,720)" name="Constant">
-      <a name="width" val="19"/>
-      <a name="value" val="0x1040"/>
-    </comp>
-    <comp lib="3" loc="(170,460)" name="Comparator">
-      <a name="width" val="16"/>
-    </comp>
-    <comp lib="5" loc="(680,1170)" name="DotMatrix">
-      <a name="matrixcols" val="19"/>
-      <a name="matrixrows" val="19"/>
-      <a name="color" val="#90ff0e"/>
-    </comp>
-    <comp lib="0" loc="(1490,750)" name="Ground">
-      <a name="width" val="19"/>
-    </comp>
-    <comp lib="4" loc="(70,370)" name="Random">
-      <a name="width" val="16"/>
-      <a name="trigger" val="falling"/>
-    </comp>
-    <comp lib="0" loc="(110,350)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="width" val="16"/>
-      <a name="label" val="RAM"/>
-      <a name="labelfont" val="SansSerif plain 9"/>
-    </comp>
-    <comp lib="5" loc="(1320,1430)" name="Button">
-      <a name="facing" val="north"/>
-      <a name="color" val="#ffde93"/>
-    </comp>
-    <comp lib="5" loc="(460,1610)" name="DotMatrix">
-      <a name="matrixcols" val="19"/>
-      <a name="matrixrows" val="19"/>
-      <a name="color" val="#90ff0e"/>
-    </comp>
-    <comp lib="0" loc="(110,610)" name="Tunnel">
+    <comp lib="0" loc="(150,610)" name="Tunnel">
       <a name="facing" val="south"/>
       <a name="width" val="16"/>
-      <a name="label" val="r1"/>
+      <a name="label" val="r5"/>
+      <a name="labelfont" val="SansSerif plain 9"/>
+    </comp>
+    <comp lib="0" loc="(260,700)" name="Tunnel">
+      <a name="label" val="word"/>
       <a name="labelfont" val="SansSerif plain 9"/>
     </comp>
     <comp lib="5" loc="(460,1390)" name="DotMatrix">
@@ -970,19 +897,89 @@
       <a name="matrixrows" val="19"/>
       <a name="color" val="#90ff0e"/>
     </comp>
-    <comp lib="0" loc="(490,610)" name="Tunnel">
+    <comp lib="5" loc="(1350,1400)" name="Button">
       <a name="facing" val="north"/>
-      <a name="label" val="mem"/>
+      <a name="color" val="#d9ff4b"/>
+    </comp>
+    <comp lib="0" loc="(110,470)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="16"/>
+      <a name="label" val="address_bus"/>
       <a name="labelfont" val="SansSerif plain 9"/>
     </comp>
-    <comp lib="8" loc="(580,570)" name="RAM">
-      <a name="addrWidth" val="16"/>
-      <a name="Directory" val="/Users/marat/projects/2048/build/out.img"/>
+    <comp lib="0" loc="(1320,680)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0xf80"/>
     </comp>
-    <comp lib="1" loc="(270,740)" name="Controlled Buffer">
+    <comp lib="0" loc="(100,630)" name="Tunnel">
+      <a name="facing" val="south"/>
       <a name="width" val="16"/>
+      <a name="label" val="r0"/>
+      <a name="labelfont" val="SansSerif plain 9"/>
+    </comp>
+    <comp lib="0" loc="(110,350)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="16"/>
+      <a name="label" val="RAM"/>
+      <a name="labelfont" val="SansSerif plain 9"/>
+    </comp>
+    <comp lib="5" loc="(900,1830)" name="DotMatrix">
+      <a name="matrixcols" val="19"/>
+      <a name="matrixrows" val="19"/>
+      <a name="color" val="#90ff0e"/>
+    </comp>
+    <comp lib="6" loc="(502,522)" name="Text">
+      <a name="text" val="there should be img-file"/>
+      <a name="font" val="SansSerif plain 14"/>
+    </comp>
+    <comp lib="6" loc="(1195,469)" name="Text">
+      <a name="text" val="как это стыкуется с процессором"/>
+    </comp>
+    <comp lib="0" loc="(110,790)" name="Clock">
+      <a name="facing" val="north"/>
     </comp>
     <comp lib="5" loc="(240,1170)" name="DotMatrix">
+      <a name="matrixcols" val="19"/>
+      <a name="matrixrows" val="19"/>
+      <a name="color" val="#90ff0e"/>
+    </comp>
+    <comp lib="5" loc="(1380,1430)" name="Button">
+      <a name="facing" val="north"/>
+      <a name="color" val="#f8ff3e"/>
+    </comp>
+    <comp lib="5" loc="(240,1830)" name="DotMatrix">
+      <a name="matrixcols" val="19"/>
+      <a name="matrixrows" val="19"/>
+      <a name="color" val="#90ff0e"/>
+    </comp>
+    <comp lib="7" loc="(150,710)" name="cdm16"/>
+    <comp lib="5" loc="(460,1170)" name="DotMatrix">
+      <a name="matrixcols" val="19"/>
+      <a name="matrixrows" val="19"/>
+      <a name="color" val="#90ff0e"/>
+    </comp>
+    <comp lib="0" loc="(1130,1850)" name="Ground">
+      <a name="width" val="19"/>
+    </comp>
+    <comp lib="5" loc="(680,1170)" name="DotMatrix">
+      <a name="matrixcols" val="19"/>
+      <a name="matrixrows" val="19"/>
+      <a name="color" val="#90ff0e"/>
+    </comp>
+    <comp lib="6" loc="(1348,1493)" name="Text">
+      <a name="text" val="(maybe make  a scheme for that)"/>
+    </comp>
+    <comp lib="0" loc="(1130,1190)" name="Ground">
+      <a name="width" val="19"/>
+    </comp>
+    <comp lib="1" loc="(240,850)" name="Controlled Buffer">
+      <a name="facing" val="north"/>
+      <a name="width" val="16"/>
+    </comp>
+    <comp lib="0" loc="(770,680)" name="Power">
+      <a name="width" val="19"/>
+    </comp>
+    <comp lib="5" loc="(240,1390)" name="DotMatrix">
       <a name="matrixcols" val="19"/>
       <a name="matrixrows" val="19"/>
       <a name="color" val="#90ff0e"/>
@@ -991,7 +988,84 @@
       <a name="label" val="mem"/>
       <a name="labelfont" val="SansSerif plain 9"/>
     </comp>
+    <comp lib="0" loc="(620,600)" name="Tunnel">
+      <a name="width" val="16"/>
+      <a name="label" val="data_bus"/>
+      <a name="labelfont" val="SansSerif plain 9"/>
+    </comp>
+    <comp lib="5" loc="(800,670)" name="DotMatrix">
+      <a name="matrixcols" val="19"/>
+      <a name="matrixrows" val="19"/>
+      <a name="color" val="#90ff0e"/>
+    </comp>
+    <comp lib="5" loc="(1350,1430)" name="Button">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(1130,1410)" name="Ground">
+      <a name="width" val="19"/>
+    </comp>
+    <comp lib="0" loc="(350,570)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="16"/>
+      <a name="label" val="address_bus"/>
+      <a name="labelfont" val="SansSerif plain 9"/>
+    </comp>
+    <comp lib="0" loc="(510,640)" name="Clock">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="5" loc="(1050,900)" name="Hex Digit Display">
+      <a name="color" val="#f0ab1d"/>
+    </comp>
+    <comp lib="0" loc="(280,780)" name="Tunnel">
+      <a name="label" val="read"/>
+      <a name="labelfont" val="SansSerif plain 9"/>
+    </comp>
+    <comp lib="6" loc="(791,446)" name="Text">
+      <a name="text" val="workspace"/>
+    </comp>
+    <comp lib="0" loc="(210,1400)" name="Power">
+      <a name="width" val="19"/>
+    </comp>
+    <comp lib="0" loc="(130,610)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="width" val="16"/>
+      <a name="label" val="r3"/>
+      <a name="labelfont" val="SansSerif plain 9"/>
+    </comp>
     <comp lib="5" loc="(680,1830)" name="DotMatrix">
+      <a name="matrixcols" val="19"/>
+      <a name="matrixrows" val="19"/>
+      <a name="color" val="#90ff0e"/>
+    </comp>
+    <comp lib="1" loc="(260,750)" name="NOT Gate">
+      <a name="facing" val="north"/>
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="0" loc="(1360,650)" name="Probe">
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="5" loc="(950,900)" name="Hex Digit Display">
+      <a name="color" val="#f0ab1d"/>
+    </comp>
+    <comp lib="0" loc="(120,630)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="width" val="16"/>
+      <a name="label" val="r2"/>
+      <a name="labelfont" val="SansSerif plain 9"/>
+    </comp>
+    <comp lib="0" loc="(110,610)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="width" val="16"/>
+      <a name="label" val="r1"/>
+      <a name="labelfont" val="SansSerif plain 9"/>
+    </comp>
+    <comp lib="5" loc="(850,900)" name="Hex Digit Display">
+      <a name="color" val="#f0ab1d"/>
+    </comp>
+    <comp lib="0" loc="(1130,1630)" name="Ground">
+      <a name="width" val="19"/>
+    </comp>
+    <comp lib="5" loc="(900,1610)" name="DotMatrix">
       <a name="matrixcols" val="19"/>
       <a name="matrixrows" val="19"/>
       <a name="color" val="#90ff0e"/>
@@ -1001,43 +1075,134 @@
       <a name="label" val="address_bus"/>
       <a name="labelfont" val="SansSerif plain 9"/>
     </comp>
-    <comp lib="7" loc="(150,710)" name="cdm16"/>
-    <comp lib="5" loc="(850,900)" name="Hex Digit Display">
-      <a name="color" val="#f0ab1d"/>
-    </comp>
-    <comp lib="5" loc="(900,1830)" name="DotMatrix">
+    <comp lib="5" loc="(1450,690)" name="DotMatrix">
       <a name="matrixcols" val="19"/>
       <a name="matrixrows" val="19"/>
       <a name="color" val="#90ff0e"/>
     </comp>
-    <comp lib="0" loc="(210,1400)" name="Power">
-      <a name="width" val="19"/>
+    <comp lib="5" loc="(900,900)" name="Hex Digit Display">
+      <a name="color" val="#f0ab1d"/>
     </comp>
-    <comp lib="0" loc="(350,570)" name="Tunnel">
-      <a name="facing" val="east"/>
+    <comp lib="2" loc="(220,360)" name="Multiplexer">
       <a name="width" val="16"/>
-      <a name="label" val="address_bus"/>
+      <a name="enable" val="false"/>
+    </comp>
+    <comp lib="6" loc="(484,506)" name="Text">
+      <a name="text" val="instructions memory"/>
+    </comp>
+    <comp lib="0" loc="(280,360)" name="Tunnel">
+      <a name="width" val="16"/>
+      <a name="label" val="data"/>
       <a name="labelfont" val="SansSerif plain 9"/>
     </comp>
-    <comp lib="5" loc="(1350,1430)" name="Button">
+    <comp lib="0" loc="(840,730)" name="Ground">
+      <a name="width" val="19"/>
+    </comp>
+    <comp lib="1" loc="(270,740)" name="Controlled Buffer">
+      <a name="width" val="16"/>
+    </comp>
+    <comp lib="6" loc="(148,536)" name="Text">
+      <a name="text" val="Garvard architecture"/>
+      <a name="font" val="SansSerif plain 22"/>
+    </comp>
+    <comp lib="5" loc="(460,1610)" name="DotMatrix">
+      <a name="matrixcols" val="19"/>
+      <a name="matrixrows" val="19"/>
+      <a name="color" val="#90ff0e"/>
+    </comp>
+    <comp lib="5" loc="(900,1170)" name="DotMatrix">
+      <a name="matrixcols" val="19"/>
+      <a name="matrixrows" val="19"/>
+      <a name="color" val="#90ff0e"/>
+    </comp>
+    <comp lib="0" loc="(240,880)" name="Tunnel">
       <a name="facing" val="north"/>
+      <a name="width" val="16"/>
+      <a name="label" val="data"/>
+      <a name="labelfont" val="SansSerif plain 9"/>
+    </comp>
+    <comp lib="0" loc="(1490,750)" name="Ground">
+      <a name="width" val="19"/>
+    </comp>
+    <comp lib="9" loc="(570,360)" name="Debugger"/>
+    <comp lib="0" loc="(20,370)" name="Clock"/>
+    <comp lib="5" loc="(1320,1430)" name="Button">
+      <a name="facing" val="north"/>
+      <a name="color" val="#ffde93"/>
     </comp>
     <comp lib="0" loc="(110,450)" name="Constant">
       <a name="width" val="16"/>
       <a name="value" val="0xfefe"/>
     </comp>
-    <comp lib="0" loc="(280,360)" name="Tunnel">
-      <a name="width" val="16"/>
-      <a name="label" val="data_bus"/>
+    <comp lib="0" loc="(490,610)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="mem"/>
       <a name="labelfont" val="SansSerif plain 9"/>
     </comp>
-    <comp lib="0" loc="(100,630)" name="Tunnel">
+    <comp lib="5" loc="(240,1610)" name="DotMatrix">
+      <a name="matrixcols" val="19"/>
+      <a name="matrixrows" val="19"/>
+      <a name="color" val="#90ff0e"/>
+    </comp>
+    <comp lib="3" loc="(170,460)" name="Comparator">
+      <a name="width" val="16"/>
+    </comp>
+    <comp lib="0" loc="(470,630)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="word"/>
+      <a name="labelfont" val="SansSerif plain 9"/>
+    </comp>
+    <comp lib="0" loc="(210,1180)" name="Power">
+      <a name="width" val="19"/>
+    </comp>
+    <comp lib="0" loc="(210,1840)" name="Power">
+      <a name="width" val="19"/>
+    </comp>
+    <comp lib="0" loc="(250,680)" name="Tunnel">
+      <a name="label" val="read"/>
+      <a name="labelfont" val="SansSerif plain 9"/>
+    </comp>
+    <comp lib="0" loc="(140,630)" name="Tunnel">
       <a name="facing" val="south"/>
       <a name="width" val="16"/>
-      <a name="label" val="r0"/>
+      <a name="label" val="r4"/>
       <a name="labelfont" val="SansSerif plain 9"/>
     </comp>
-    <comp lib="5" loc="(1450,690)" name="DotMatrix">
+    <comp lib="5" loc="(680,1390)" name="DotMatrix">
+      <a name="matrixcols" val="19"/>
+      <a name="matrixrows" val="19"/>
+      <a name="color" val="#90ff0e"/>
+    </comp>
+    <comp lib="0" loc="(170,610)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="width" val="16"/>
+      <a name="label" val="r7"/>
+      <a name="labelfont" val="SansSerif plain 9"/>
+    </comp>
+    <comp lib="0" loc="(1320,740)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0xf80"/>
+    </comp>
+    <comp lib="0" loc="(210,1620)" name="Power">
+      <a name="width" val="19"/>
+    </comp>
+    <comp lib="5" loc="(1000,900)" name="Hex Digit Display">
+      <a name="color" val="#f0ab1d"/>
+    </comp>
+    <comp lib="6" loc="(496,701)" name="Text">
+      <a name="text" val="data memory"/>
+    </comp>
+    <comp lib="8" loc="(580,570)" name="RAM">
+      <a name="addrWidth" val="16"/>
+      <a name="Directory" val="/Users/marat/projects/2048/build/out.img"/>
+    </comp>
+    <comp lib="6" loc="(1057,446)" name="Text">
+      <a name="text" val="сколько у нас памяти?"/>
+    </comp>
+    <comp lib="6" loc="(1345,1478)" name="Text">
+      <a name="text" val="CONTROL PANEL"/>
+    </comp>
+    <comp lib="5" loc="(680,1610)" name="DotMatrix">
       <a name="matrixcols" val="19"/>
       <a name="matrixrows" val="19"/>
       <a name="color" val="#90ff0e"/>
@@ -1046,105 +1211,15 @@
       <a name="facing" val="west"/>
       <a name="width" val="16"/>
     </comp>
-    <comp lib="0" loc="(260,700)" name="Tunnel">
-      <a name="label" val="word"/>
-      <a name="labelfont" val="SansSerif plain 9"/>
-    </comp>
-    <comp lib="0" loc="(470,630)" name="Tunnel">
-      <a name="facing" val="north"/>
-      <a name="label" val="word"/>
-      <a name="labelfont" val="SansSerif plain 9"/>
-    </comp>
-    <comp lib="0" loc="(160,630)" name="Tunnel">
-      <a name="facing" val="south"/>
-      <a name="width" val="16"/>
-      <a name="label" val="r6"/>
-      <a name="labelfont" val="SansSerif plain 9"/>
-    </comp>
-    <comp lib="6" loc="(1195,469)" name="Text">
-      <a name="text" val="как это стыкуется с процессором"/>
-    </comp>
-    <comp lib="0" loc="(1320,700)" name="Constant">
-      <a name="width" val="19"/>
-      <a name="value" val="0x1040"/>
-    </comp>
-    <comp lib="5" loc="(1050,900)" name="Hex Digit Display">
-      <a name="color" val="#f0ab1d"/>
-    </comp>
-    <comp lib="0" loc="(210,1620)" name="Power">
-      <a name="width" val="19"/>
-    </comp>
-    <comp lib="6" loc="(502,522)" name="Text">
-      <a name="text" val="there should be img-file"/>
-      <a name="font" val="SansSerif plain 14"/>
-    </comp>
-    <comp lib="0" loc="(770,680)" name="Power">
-      <a name="width" val="19"/>
-    </comp>
-    <comp lib="0" loc="(1320,680)" name="Constant">
-      <a name="width" val="19"/>
-      <a name="value" val="0xf80"/>
-    </comp>
-    <comp lib="0" loc="(150,610)" name="Tunnel">
-      <a name="facing" val="south"/>
-      <a name="width" val="16"/>
-      <a name="label" val="r5"/>
-      <a name="labelfont" val="SansSerif plain 9"/>
-    </comp>
-    <comp lib="0" loc="(340,770)" name="Tunnel">
-      <a name="width" val="16"/>
-      <a name="label" val="data_bus"/>
-      <a name="labelfont" val="SansSerif plain 9"/>
-    </comp>
-    <comp lib="0" loc="(210,1840)" name="Power">
-      <a name="width" val="19"/>
-    </comp>
-    <comp lib="0" loc="(1130,1850)" name="Ground">
-      <a name="width" val="19"/>
-    </comp>
-    <comp lib="0" loc="(1130,1630)" name="Ground">
-      <a name="width" val="19"/>
-    </comp>
-    <comp lib="5" loc="(900,1170)" name="DotMatrix">
-      <a name="matrixcols" val="19"/>
-      <a name="matrixrows" val="19"/>
-      <a name="color" val="#90ff0e"/>
-    </comp>
-    <comp lib="0" loc="(280,780)" name="Tunnel">
+    <comp lib="0" loc="(250,860)" name="Tunnel">
       <a name="label" val="read"/>
       <a name="labelfont" val="SansSerif plain 9"/>
     </comp>
-    <comp lib="6" loc="(484,506)" name="Text">
-      <a name="text" val="instructions memory"/>
-    </comp>
-    <comp lib="5" loc="(240,1610)" name="DotMatrix">
-      <a name="matrixcols" val="19"/>
-      <a name="matrixrows" val="19"/>
-      <a name="color" val="#90ff0e"/>
-    </comp>
-    <comp lib="5" loc="(900,900)" name="Hex Digit Display">
-      <a name="color" val="#f0ab1d"/>
+    <comp lib="0" loc="(1320,720)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0x1040"/>
     </comp>
     <comp lib="5" loc="(460,1830)" name="DotMatrix">
-      <a name="matrixcols" val="19"/>
-      <a name="matrixrows" val="19"/>
-      <a name="color" val="#90ff0e"/>
-    </comp>
-    <comp lib="5" loc="(1000,900)" name="Hex Digit Display">
-      <a name="color" val="#f0ab1d"/>
-    </comp>
-    <comp lib="0" loc="(1130,1190)" name="Ground">
-      <a name="width" val="19"/>
-    </comp>
-    <comp lib="1" loc="(260,750)" name="NOT Gate">
-      <a name="facing" val="north"/>
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="0" loc="(510,640)" name="Clock">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="0" loc="(20,360)" name="Clock"/>
-    <comp lib="5" loc="(900,1610)" name="DotMatrix">
       <a name="matrixcols" val="19"/>
       <a name="matrixrows" val="19"/>
       <a name="color" val="#90ff0e"/>
@@ -1154,92 +1229,84 @@
       <a name="label" val="RAM"/>
       <a name="labelfont" val="SansSerif plain 9"/>
     </comp>
-    <comp lib="0" loc="(1360,650)" name="Probe">
-      <a name="facing" val="south"/>
-    </comp>
-    <comp lib="0" loc="(170,610)" name="Tunnel">
-      <a name="facing" val="south"/>
-      <a name="width" val="16"/>
-      <a name="label" val="r7"/>
-      <a name="labelfont" val="SansSerif plain 9"/>
-    </comp>
-    <comp lib="0" loc="(140,630)" name="Tunnel">
-      <a name="facing" val="south"/>
-      <a name="width" val="16"/>
-      <a name="label" val="r4"/>
-      <a name="labelfont" val="SansSerif plain 9"/>
-    </comp>
-    <comp lib="9" loc="(570,360)" name="Debugger"/>
-    <comp lib="5" loc="(680,1390)" name="DotMatrix">
-      <a name="matrixcols" val="19"/>
-      <a name="matrixrows" val="19"/>
-      <a name="color" val="#90ff0e"/>
-    </comp>
-    <comp lib="5" loc="(1350,1400)" name="Button">
-      <a name="facing" val="north"/>
-      <a name="color" val="#d9ff4b"/>
-    </comp>
-    <comp lib="5" loc="(800,670)" name="DotMatrix">
-      <a name="matrixcols" val="19"/>
-      <a name="matrixrows" val="19"/>
-      <a name="color" val="#90ff0e"/>
-    </comp>
-    <comp lib="6" loc="(496,701)" name="Text">
-      <a name="text" val="data memory"/>
-    </comp>
-    <comp lib="5" loc="(1380,1430)" name="Button">
-      <a name="facing" val="north"/>
-      <a name="color" val="#f8ff3e"/>
-    </comp>
-    <comp lib="2" loc="(220,360)" name="Multiplexer">
-      <a name="width" val="16"/>
-      <a name="enable" val="false"/>
-    </comp>
-    <comp lib="0" loc="(620,600)" name="Tunnel">
+    <comp lib="0" loc="(340,770)" name="Tunnel">
       <a name="width" val="16"/>
       <a name="label" val="data_bus"/>
       <a name="labelfont" val="SansSerif plain 9"/>
     </comp>
-    <comp lib="6" loc="(1348,1493)" name="Text">
-      <a name="text" val="(maybe make  a scheme for that)"/>
+    <comp loc="(70,370)" name="random"/>
+    <comp lib="6" loc="(767,881)" name="Text">
+      <a name="text" val="счет"/>
+      <a name="font" val="SansSerif plain 26"/>
     </comp>
-    <comp lib="0" loc="(130,610)" name="Tunnel">
-      <a name="facing" val="south"/>
-      <a name="width" val="16"/>
-      <a name="label" val="r3"/>
-      <a name="labelfont" val="SansSerif plain 9"/>
-    </comp>
-    <comp lib="0" loc="(250,680)" name="Tunnel">
-      <a name="label" val="read"/>
-      <a name="labelfont" val="SansSerif plain 9"/>
-    </comp>
-    <comp lib="6" loc="(791,446)" name="Text">
-      <a name="text" val="workspace"/>
-    </comp>
-    <comp lib="0" loc="(120,630)" name="Tunnel">
-      <a name="facing" val="south"/>
-      <a name="width" val="16"/>
-      <a name="label" val="r2"/>
-      <a name="labelfont" val="SansSerif plain 9"/>
-    </comp>
-    <comp lib="6" loc="(1345,1478)" name="Text">
-      <a name="text" val="CONTROL PANEL"/>
-    </comp>
-    <comp lib="0" loc="(110,470)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="width" val="16"/>
-      <a name="label" val="address_bus"/>
-      <a name="labelfont" val="SansSerif plain 9"/>
-    </comp>
-    <comp lib="5" loc="(240,1390)" name="DotMatrix">
+    <comp lib="5" loc="(900,1390)" name="DotMatrix">
       <a name="matrixcols" val="19"/>
       <a name="matrixrows" val="19"/>
       <a name="color" val="#90ff0e"/>
     </comp>
-    <comp lib="5" loc="(680,1610)" name="DotMatrix">
-      <a name="matrixcols" val="19"/>
-      <a name="matrixrows" val="19"/>
-      <a name="color" val="#90ff0e"/>
+    <comp lib="0" loc="(160,630)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="width" val="16"/>
+      <a name="label" val="r6"/>
+      <a name="labelfont" val="SansSerif plain 9"/>
     </comp>
+    <comp lib="0" loc="(1320,700)" name="Constant">
+      <a name="width" val="19"/>
+      <a name="value" val="0x1040"/>
+    </comp>
+  </circuit>
+  <circuit name="random">
+    <a name="circuit" val="random"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <appear>
+      <path d="M61,56 Q65,66 69,56" fill="none" stroke="#808080" stroke-width="2"/>
+      <rect fill="none" height="55" stroke="#000000" stroke-width="2" width="30" x="50" y="55"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="65" y="91">rand</text>
+      <polyline fill="none" points="64,65 57,71 64,77" stroke="#000000"/>
+      <circ-port height="8" pin="150,210" width="8" x="46" y="66"/>
+      <circ-port height="10" pin="430,280" width="10" x="75" y="65"/>
+      <circ-anchor facing="east" height="6" width="6" x="77" y="67"/>
+    </appear>
+    <wire from="(150,210)" to="(210,210)"/>
+    <wire from="(380,280)" to="(430,280)"/>
+    <wire from="(360,270)" to="(360,280)"/>
+    <wire from="(360,240)" to="(360,250)"/>
+    <wire from="(360,250)" to="(360,260)"/>
+    <wire from="(360,260)" to="(360,270)"/>
+    <wire from="(360,280)" to="(360,290)"/>
+    <wire from="(360,290)" to="(360,300)"/>
+    <wire from="(360,300)" to="(360,310)"/>
+    <wire from="(360,310)" to="(360,320)"/>
+    <wire from="(360,320)" to="(360,330)"/>
+    <wire from="(360,330)" to="(360,340)"/>
+    <wire from="(360,340)" to="(360,350)"/>
+    <wire from="(360,350)" to="(360,360)"/>
+    <wire from="(240,220)" to="(340,220)"/>
+    <comp lib="0" loc="(150,210)" name="Pin">
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(340,220)" name="Splitter">
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+      <a name="appear" val="center"/>
+    </comp>
+    <comp lib="0" loc="(430,280)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="16"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="4" loc="(240,220)" name="Random">
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="0" loc="(380,280)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="16"/>
+      <a name="incoming" val="16"/>
+      <a name="appear" val="center"/>
+    </comp>
+    <comp lib="0" loc="(360,360)" name="Ground"/>
   </circuit>
 </project>

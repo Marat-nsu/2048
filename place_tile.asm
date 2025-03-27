@@ -22,7 +22,8 @@ count_empty>
 	stays lt
 		if
 			ldw r2, r1, r3
-		is lt
+			tst r3
+		is z
 			inc r0
 		fi
 		add r1, 2
@@ -57,7 +58,8 @@ place_tile>
 	stays lt
 		if
 			ldw r4, r3, r6
-		is lt
+			tst r6
+		is z
 			if
 				cmp r5, r2
 			is eq
