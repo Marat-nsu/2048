@@ -41,12 +41,15 @@ place_tile: ext
 move_left: ext
 move_right: ext
 main>
-
 	jsr place_tile
     jsr place_tile
     jsr place_tile
     jsr place_tile
+    jsr place_tile
+    jsr place_tile
     jsr move_right
+    jsr place_tile
+    jsr move_left
 	halt
     # your code here
 

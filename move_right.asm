@@ -64,7 +64,7 @@ move_right>
 	# r6 has matrix changed
 	# r5 address of current row
 	ldi r5, matrix
-	ldi r4, 0xff20 # end of matrix
+	ldi r4, 0xff10 # end of matrix
 	while
 		cmp r5, r4
 	stays lt

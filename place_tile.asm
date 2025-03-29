@@ -18,7 +18,7 @@ count_empty>
 	ldi r1, 0
 	ldi r2, matrix
 	while
-		cmp r1, 32
+		cmp r1, 16
 	stays lt
 		if
 			ldw r2, r1, r3
@@ -45,6 +45,11 @@ place_tile>
 	jsr choose_tile
 	move r0, r4
 	jsr count_empty
+	if
+		tst r0
+	is z
+		rts
+	fi
 	move r4, r1 # r0 - amount of empty tiles, r1 - selected tile
 	ldi r2, random
 	ldw r2, r2
@@ -54,7 +59,7 @@ place_tile>
 	ldi r4, matrix
 	ldi r5, 0 # amount of empty tiles
 	while
-		cmp r3, 32
+		cmp r3, 16
 	stays lt
 		if
 			ldw r4, r3, r6
