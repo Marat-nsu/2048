@@ -18,7 +18,7 @@ count_empty>
 	ldi r1, 0
 	ldi r2, matrix
 	while
-		cmp r1, 16
+		cmp r1, 8
 	stays lt
 		if
 			ldw r2, r1, r3
@@ -59,7 +59,7 @@ place_tile>
 	ldi r4, matrix
 	ldi r5, 0 # amount of empty tiles
 	while
-		cmp r3, 16
+		cmp r3, 8
 	stays lt
 		if
 			ldw r4, r3, r6
