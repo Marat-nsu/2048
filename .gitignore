@@ -1,2 +1,4 @@
 .vscode/launch.json
 .vscode/tasks.json
+./main.img
+/build/out.dbg.json
