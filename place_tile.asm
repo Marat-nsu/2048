@@ -18,7 +18,7 @@ count_empty>
 	ldi r1, 0
 	ldi r2, matrix
 	while
-		cmp r1, 8
+		cmp r1, 16
 	stays lt
 		if
 			ldw r2, r1, r3
@@ -26,7 +26,7 @@ count_empty>
 		is z
 			inc r0
 		fi
-		add r1, 2
+		add r1, 1
 	wend
 	rts
 
@@ -59,7 +59,7 @@ place_tile>
 	ldi r4, matrix
 	ldi r5, 0 # amount of empty tiles
 	while
-		cmp r3, 8
+		cmp r3, 16
 	stays lt
 		if
 			ldw r4, r3, r6
@@ -68,12 +68,12 @@ place_tile>
 			if
 				cmp r5, r2
 			is eq
-				stw r4, r3, r1
+				stb r4, r3, r1
 				break
 			fi
 			inc r5
 		fi
-		add r3, 2
+		add r3, 1
 	wend
 	rts
 end.

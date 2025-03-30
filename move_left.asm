@@ -8,9 +8,9 @@ slide_row_left>
 	ldi r1, 0
 	ldi r3, 0
 	while
-		cmp r1, 8
+		cmp r1, 4
 	stays lt
-		ldw r5, r1, r2
+		ldb r5, r1, r2
 		if
 			tst r2
 		is nz
@@ -18,12 +18,12 @@ slide_row_left>
 				cmp r0, r1
 			is ne
 				ldi r6, 1 # set flag that matrix has changed
-				stw r5, r0, r2 # move non-zero tile to the first
-				stw r5, r1, r3 # clear tile
+				stb r5, r0, r2 # move non-zero tile to the first
+				stb r5, r1, r3 # clear tile
 			fi
-			add r0, 2 # move r0 to the next tile
+			add r0, 1 # move r0 to the next tile
 		fi
-		add r1, 2
+		add r1, 1
 	wend
 	rts
 
@@ -31,10 +31,10 @@ merge_row_left>
 	ldi r0, 0
 	ldi r1, 2
 	while
-		cmp r1, 8
+		cmp r1, 4
 	stays lt
-		ldw r5, r0, r2
-		ldw r5, r1, r3
+		ldb r5, r0, r2
+		ldb r5, r1, r3
 		if
 			cmp r2, r3
 		is eq
@@ -43,13 +43,13 @@ merge_row_left>
 			is nz
 				ldi r6, 1 # set flag that matrix has changed
 				add r2, 1
-				stw r5, r0, r2
+				stb r5, r0, r2
 				ldi r3, 0
-				stw r5, r1, r3
+				stb r5, r1, r3
 			fi
 		fi
-		add r0, 2
-		add r1, 2
+		add r0, 1
+		add r1, 1
 	wend
 	rts
 
@@ -69,7 +69,7 @@ move_left>
 		cmp r5, r4
 	stays lt
 		jsr process_row_left
-		add r5, 8
+		add r5, 4
 	wend
 	rts
 
