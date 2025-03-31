@@ -868,6 +868,7 @@
     <comp lib="8" loc="(580,570)" name="RAM">
       <a name="addrWidth" val="16"/>
       <a name="Directory" val="/Users/marat/projects/2048/build/out.img"/>
+      <a name="LoadImageFromFile" val="load"/>
     </comp>
     <comp lib="0" loc="(840,730)" name="Ground">
       <a name="width" val="19"/>

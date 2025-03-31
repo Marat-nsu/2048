@@ -7,7 +7,7 @@ slide_row_left>
 	ldi r0, 0
 	ldi r1, 0
 	ldi r3, 0
-	ldi r7, 0
+	ldi r7, 0 # amount of empty tiles
 	while
 		cmp r1, 4
 	stays lt
@@ -32,8 +32,8 @@ slide_row_left>
 
 merge_row_left>
 	ldi r0, 0
-	ldi r1, 2
-	ldi r7, 0
+	ldi r1, 1
+	ldi r7, 0 # has row been changed
 	while
 		cmp r1, 4
 	stays lt
@@ -61,13 +61,13 @@ merge_row_left>
 process_row_left>
 	jsr slide_row_left
 	if
-		cmp r7, 4
+		cmp r7, 4 # if row is empty, there is nothing we can do
 	is eq
 		rts
 	fi
 	jsr merge_row_left
 	if
-		tst r7
+		tst r7 # if row hasn't been changed, there is nothing we can do
 	is z
 		rts
 	fi
@@ -79,7 +79,7 @@ move_left>
 	# r6 has matrix changed
 	# r5 address of current row
 	ldi r5, matrix
-	ldi r4, 0xff20 # end of matrix
+	ldi r4, 0xff10 # end of matrix
 	while
 		cmp r5, r4
 	stays lt
