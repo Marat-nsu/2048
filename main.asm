@@ -43,6 +43,10 @@ move_right: ext
 main>
 	jsr place_tile
     jsr place_tile
+    jsr place_tile
+    jsr place_tile
+    jsr place_tile
+    jsr place_tile
     jsr move_right
 	halt
     # your code here
