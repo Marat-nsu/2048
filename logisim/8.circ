@@ -149,27 +149,27 @@
     </comp>
     <comp lib="0" loc="(70, 170)" name="Constant">
       <a name="width" val="19"/>
-      <a name="value" val="0x0FFF8"/>
+      <a name="value" val="0x07BF0"/>
     </comp>
     <comp lib="0" loc="(70, 190)" name="Constant">
       <a name="width" val="19"/>
-      <a name="value" val="0x08208"/>
+      <a name="value" val="0x0FFF8"/>
     </comp>
     <comp lib="0" loc="(70, 210)" name="Constant">
       <a name="width" val="19"/>
-      <a name="value" val="0x08208"/>
+      <a name="value" val="0x0CE38"/>
     </comp>
     <comp lib="0" loc="(70, 230)" name="Constant">
       <a name="width" val="19"/>
-      <a name="value" val="0x08208"/>
+      <a name="value" val="0x0C618"/>
     </comp>
     <comp lib="0" loc="(70, 250)" name="Constant">
       <a name="width" val="19"/>
-      <a name="value" val="0x08208"/>
+      <a name="value" val="0x0C618"/>
     </comp>
     <comp lib="0" loc="(70, 270)" name="Constant">
       <a name="width" val="19"/>
-      <a name="value" val="0x08208"/>
+      <a name="value" val="0x0E718"/>
     </comp>
     <comp lib="0" loc="(70, 290)" name="Constant">
       <a name="width" val="19"/>
@@ -177,7 +177,7 @@
     </comp>
     <comp lib="0" loc="(70, 310)" name="Constant">
       <a name="width" val="19"/>
-      <a name="value" val="0x00000"/>
+      <a name="value" val="0x07BF0"/>
     </comp>
     <comp lib="0" loc="(70, 330)" name="Constant">
       <a name="width" val="19"/>
