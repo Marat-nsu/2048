@@ -75,13 +75,13 @@ process_col_up>
 
 move_up>
     ldi r6, 0
-    ldi r8, 0
+    ldi r4, 0
     while
-        cmp r8, 4
+        cmp r4, 4
     stays lt
         ldi r5, matrix
         jsr process_col_up
-        add r8, 1
+        add r4, 1
     wend
     rts
 
