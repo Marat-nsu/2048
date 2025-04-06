@@ -11,7 +11,8 @@ slide_col_down>
     while
         cmp r1, 0
     stays ge
-        ldb r5, r1
+        ldi r2, 0
+        ldb r2, r5, r1
         if
             tst r2
         is nz
@@ -19,8 +20,8 @@ slide_col_down>
                 cmp r0, r1
             is ne
                 ldi r6, 1
-                stb r5, r0, r2
-                stb r5, r1, r3
+                stb r2, r5, r0
+                stb r3, r5, r1
             fi
             add r0, -1
         else
@@ -37,8 +38,10 @@ merge_col_down>
     while
         cmp r1, 0
     stays ge
-        ldb r5, r0
-        ldb r5, r1
+        ldi r2, 0
+        ldi r3, 0
+        ldb r2, r5, r0
+        ldb r3, r5, r1
         if
             cmp r2, r3
         is eq
@@ -48,8 +51,8 @@ merge_col_down>
                 ldi r7, 1
                 ldi r6, 1
                 add r2, 1
-                stb r5, r0, r2
-                stb r5, r1, r3
+                stb r2, r5, r0
+                stb r3, r5, r1
             fi
         fi
         add r0, -1
@@ -75,7 +78,7 @@ process_col_down>
 
 move_down>
     ldi r6, 0
-    ldi r4, 0 
+    ldi r4, 0
     while
         cmp r4, 4
     stays lt
