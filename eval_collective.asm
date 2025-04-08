@@ -135,8 +135,17 @@ eval_collective>
 		add r0, 1
 	wend
 
-	lsw r0, 0
-	lsw r1, -2
+	lsw r0, 0 # smoothnes
+	lsw r1, -2 # merge
+	move r0, r3
+	shl r1, r2, 5 # коэффициент merge - 32
+	add r2, r3, r3
+	
+	add r1, 24 # mono = merge + 24
+	shl r1, r1, 6 # коэффициент mono - 64
+	add r1, r3, r3
+	lsw r4, 4 # result
+	stw r4, r3
 	addsp 6
 	pop r7
 	rts
