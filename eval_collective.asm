@@ -135,6 +135,10 @@ eval_collective>
 		add r0, 1
 	wend
 
+	# Эта функция очищает значение которое хранилось по 
+	# адресу result, 
+	# функция eval_individual должна не записать оценку в result,
+	# а добавить свою оценку к result
 	lsw r0, 0 # smoothnes
 	lsw r1, -2 # merge
 	move r0, r3
