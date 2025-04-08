@@ -4,8 +4,8 @@ matrix:
 rsect move_left
 
 slide_row_left>
-	ldi r0, 0
-	ldi r1, 0
+	ldi r0, 0 # адрес первой ячейки
+	ldi r1, 0 # адрес первой ячейки
 	ldi r3, 0
 	ldi r7, 0 # amount of empty tiles
 	while
@@ -22,17 +22,17 @@ slide_row_left>
 				stb r5, r0, r2 # move non-zero tile to the first
 				stb r5, r1, r3 # clear tile
 			fi
-			add r0, 1 # move r0 to the next tile
+			add r0, 1 # сдвигаем r0 на следующую ячейку
 		else 
 			inc r7
 		fi
-		add r1, 1
+		add r1, 1 # сдвигаем r1 на следующую ячейку
 	wend
 	rts
 
 merge_row_left>
-	ldi r0, 0
-	ldi r1, 1
+	ldi r0, 0 # адрес первой ячейки
+	ldi r1, 1 # адрес второй ячейки
 	ldi r7, 0 # has row been changed
 	while
 		cmp r1, 4
@@ -53,8 +53,8 @@ merge_row_left>
 				stb r5, r1, r3
 			fi
 		fi
-		add r0, 1
-		add r1, 1
+		add r0, 1 # переходим на следующую ячейку
+		add r1, 1 # переходим на следующую ячейку
 	wend
 	rts
 
@@ -77,14 +77,13 @@ process_row_left>
 move_left>
 	ldi r6, 0
 	# r6 has matrix changed
-	# r5 address of current row
-	ldi r5, matrix
-	ldi r4, 0xff10 # end of matrix
+	ldi r5, matrix # адрес обрабатываемого ряда
+	ldi r4, 0xff10 # адрес конца матрицы
 	while
 		cmp r5, r4
 	stays lt
 		jsr process_row_left
-		add r5, 4
+		add r5, 4 # переходим на следующий ряд
 	wend
 	rts
 
