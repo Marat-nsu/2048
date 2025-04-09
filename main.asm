@@ -40,10 +40,16 @@ rsect main
 place_tile: ext
 move_left: ext
 move_right: ext
+eval_collective: ext
 main>
 	jsr place_tile
     jsr place_tile
     jsr place_tile
+    ldi r0, 0xff00
+    ldi r1, 0xff50
+    push r0
+    push r1
+    jsr eval_collective
     jsr place_tile
     jsr place_tile
     jsr place_tile
