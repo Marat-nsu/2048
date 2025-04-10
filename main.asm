@@ -41,10 +41,15 @@ place_tile: ext
 move_left: ext
 move_right: ext
 eval_collective: ext
+move_down: ext
+move_up: ext
+
 main>
 	jsr place_tile
     jsr place_tile
     jsr place_tile
+    jsr move_down
+    jsr move_up
     ldi r0, 0xff00
     ldi r1, 0xff50
     push r0
@@ -54,6 +59,7 @@ main>
     jsr place_tile
     jsr place_tile
     jsr move_right
+    jsr move_down
 	halt
     # your code here
 
