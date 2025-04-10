@@ -21,7 +21,7 @@ count_empty>
 		cmp r1, 16
 	stays lt
 		if
-			ldw r2, r1, r3
+			ldb r2, r1, r3
 			tst r3
 		is z
 			inc r0
@@ -62,7 +62,7 @@ place_tile>
 		cmp r3, 16
 	stays lt
 		if
-			ldw r4, r3, r6
+			ldb r4, r3, r6
 			tst r6
 		is z
 			if
