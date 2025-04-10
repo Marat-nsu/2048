@@ -46,20 +46,16 @@ move_up: ext
 
 main>
 	jsr place_tile
-    jsr place_tile
-    jsr place_tile
     jsr move_down
-    jsr move_up
-    ldi r0, 0xff00
-    ldi r1, 0xff50
-    push r0
-    push r1
-    jsr eval_collective
-    jsr place_tile
-    jsr place_tile
     jsr place_tile
     jsr move_right
+    jsr place_tile
+    jsr move_up
+    jsr place_tile
+    jsr move_left
+    jsr place_tile
     jsr move_down
+
 	halt
     # your code here
 

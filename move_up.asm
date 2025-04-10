@@ -77,8 +77,8 @@ process_row_up>
 move_up>
 	ldi r6, 0
 	# r6 has matrix changed
-	ldi r5, matrix # адрес обрабатываемого ряда
-	ldi r4, 0xff10 # адрес конца матрицы
+	ldi r5, matrix # адрес обрабатываемого столбца
+	ldi r4, 0xff04 # адрес последнего столбика
 	while
 		cmp r5, r4
 	stays lt
