@@ -47,19 +47,22 @@ eval_individual>
         cmp r5, 0
     is eq
         ldi r1, 1
-    else if
+    fi
+    if
         cmp r5, 3
     is eq
         ldi r1, 1
-    else if
+    fi
+    if
         cmp r5, 12
     is eq
         ldi r1, 1
-    else if
+    fi    
+    if
         cmp r5, 15
     is eq
         ldi r1, 1
-    fi fi fi fi
+    fi
 
 
     ssw r1, 0       # edge_score
