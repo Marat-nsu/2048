@@ -19,8 +19,10 @@ slide_row_left>
 				cmp r0, r1
 			is ne
 				ldi r6, 1 # set flag that matrix has changed
+				add r5, 0x10
 				stb r5, r0, r2 # move non-zero tile to the first
 				stb r5, r1, r3 # clear tile
+				sub r5, 0x10
 			fi
 			add r0, 1 # сдвигаем r0 на следующую ячейку
 		else 
@@ -48,9 +50,11 @@ merge_row_left>
 				ldi r7, 1
 				ldi r6, 1 # set flag that matrix has changed
 				add r2, 1
+				add r5, 0x10
 				stb r5, r0, r2
 				ldi r3, 0
 				stb r5, r1, r3
+				sub r5, 0x10
 			fi
 		fi
 		add r0, 1 # переходим на следующую ячейку
