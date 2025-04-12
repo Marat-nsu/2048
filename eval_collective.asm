@@ -150,6 +150,8 @@ eval_collective>
 	add r1, r3, r3
 	lsw r4, 4 # result
 	stw r4, r3
+	lsw r0, 6
+	lsw r1, 4
 	addsp 6
 	pop r7
 	rts

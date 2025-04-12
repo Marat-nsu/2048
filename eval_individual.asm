@@ -81,6 +81,8 @@ eval_individual>
     add r4, r2, r4  
     stw r3, r4     
 
+	lsw r0, 6
+	lsw r1, 4
     addsp 6
     pop r7
     rts

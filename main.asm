@@ -43,23 +43,29 @@ move_right: ext
 eval_collective: ext
 move_down: ext
 move_up: ext
+eval_individual: ext
 
 main>
     jsr place_tile
 	jsr place_tile
+    jsr move_left
+    jsr move_right
+    jsr move_up
+    jsr move_down
+    ldi r0, 0xff00
+    ldi r1, 0xff50
     while
-        ldi r0, 0
-        tst r0
-    stays eq
-        jsr move_left
-        jsr place_tile
-        jsr move_up
-        jsr place_tile
-        jsr move_right
-        jsr place_tile
-        jsr move_down
-        jsr place_tile
+        ldi r2, 0xff58
+        cmp r1, r2
+    stays lt
+        push r0
+        push r1
+        jsr eval_collective
+        push r0
+        push r1
+        jsr eval_individual
+        add r0, 0x10
+        add r1, 2
     wend
-
 	halt
 end.
