@@ -8,7 +8,7 @@ rsect eval_individual
 eval_individual>
     push r7
     ldsp r7
-    addsp -4
+    addsp -6
 
 
     ldi r2, 0       # cur_idx
@@ -66,10 +66,10 @@ eval_individual>
 
 
     ssw r1, 0       # corner_score
-    ssw r6, 2       # free_score
+    ssw r6, -2       # free_score
 
     lsw r0, 0       # corner
-    lsw r1, 2       # free
+    lsw r1, -2       # free
 
     
     shl r0, r0, 2   # corner_coef = 4
@@ -81,7 +81,7 @@ eval_individual>
     add r4, r2, r4  
     stw r3, r4     
 
-    addsp 4
+    addsp 6
     pop r7
     rts
 
