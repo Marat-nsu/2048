@@ -2,7 +2,7 @@ rsect eval_individual
 
 # fp + 6 = matrix address
 # fp + 4 = result address
-# fp - 0 = edge_score
+# fp - 0 = corner_score
 # fp - 2 = free_score
 
 eval_individual>
@@ -41,7 +41,7 @@ eval_individual>
         inc r2
     wend
 
-    # edge в углу
+    # corner в углу
     ldi r1, 0
     if
         cmp r5, 0
@@ -65,15 +65,15 @@ eval_individual>
     fi
 
 
-    ssw r1, 0       # edge_score
+    ssw r1, 0       # corner_score
     ssw r6, 2       # free_score
 
-    lsw r0, 0       # edge
+    lsw r0, 0       # corner
     lsw r1, 2       # free
 
     
-    shl r0, r0, 7   # egge_coef взял равным 128
-    shl r1, r1, 5   # free_coef взял равным 32
+    shl r0, r0, 2   # corner_coef = 4
+    shl r1, r1, 2   # free_coef = 4
     add r0, r1, r2 
 
     lsw r3, 4       # result adress

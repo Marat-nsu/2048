@@ -45,18 +45,21 @@ move_down: ext
 move_up: ext
 
 main>
+    jsr place_tile
 	jsr place_tile
-    jsr move_down
-    jsr place_tile
-    jsr move_right
-    jsr place_tile
-    jsr move_up
-    jsr place_tile
-    jsr move_left
-    jsr place_tile
-    jsr move_down
+    while
+        ldi r0, 0
+        tst r0
+    stays eq
+        jsr move_left
+        jsr place_tile
+        jsr move_up
+        jsr place_tile
+        jsr move_right
+        jsr place_tile
+        jsr move_down
+        jsr place_tile
+    wend
 
 	halt
-    # your code here
-
 end.
