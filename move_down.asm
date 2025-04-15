@@ -7,6 +7,7 @@ slide_col_down>
 	ldi r0, 12 # адрес нижней ячейки
 	ldi r1, 12 # тот же адрес
 	ldi r7, 0
+	ldi r3, 0
 	while
 		cmp r1, 0
 	stays ge
@@ -14,16 +15,11 @@ slide_col_down>
 		if
 			tst r2
 		is nz
-			if
-				cmp r0, r1
-			is ne
-				ldi r6, 1 # флаг - поменяли матрицу
-				add r5, 0x30
-				stb r5, r0, r2 # move non-zero tile to the first
-				ldi r3, 0
-				stb r5, r1, r3 # clear tile
-				sub r5, 0x30
-			fi
+			ldi r6, 1 # флаг - поменяли матрицу
+			add r5, 0x30
+			stb r5, r1, r3 # clear tile
+			stb r5, r0, r2 # move non-zero tile to the first
+			sub r5, 0x30
 			sub r0, 4 # сдвигаем r0 на следующую ячейку
 		else
 			inc r7

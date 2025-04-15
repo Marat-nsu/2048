@@ -7,6 +7,7 @@ slide_row_up>
 	ldi r0, 0 # адрес первой ячейки
 	ldi r1, 0 # адрес первой ячейки
 	ldi r7, 0 # amount of empty tiles
+	ldi r3, 0
 	while
 		cmp r1, 16
 	stays lt
@@ -14,18 +15,13 @@ slide_row_up>
 		if
 			tst r2
 		is nz
-			if
-				cmp r0, r1
-			is ne
-				ldi r6, 1 # set flag that matrix has changed
-				add r5, 0x30
-				add r5, 0x10 # 0x40 не влезает в imm6
-				stb r5, r0, r2 # move non-zero tile to the first
-				ldi r3, 0
-				stb r5, r1, r3 # clear tile
-				sub r5, 0x30
-				sub r5, 0x10
-			fi
+			ldi r6, 1 # set flag that matrix has changed
+			add r5, 0x30
+			add r5, 0x10 # 0x40 не влезает в imm6
+			stb r5, r1, r3 # clear tile
+			stb r5, r0, r2 # move non-zero tile to the first
+			sub r5, 0x30
+			sub r5, 0x10
 			add r0, 4 # сдвигаем r0 на следующую ячейку
 		else 
 			inc r7

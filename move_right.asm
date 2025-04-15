@@ -15,15 +15,11 @@ slide_row_right>
 		if
 			tst r2
 		is nz
-			if
-				cmp r0, r1
-			is ne
-				ldi r6, 1 # set flag that matrix has changed
-				add r5, 0x20
-				stb r5, r0, r2 # move non-zero tile to the first
-				stb r5, r1, r3 # clear tile
-				sub r5, 0x20
-			fi
+			ldi r6, 1 # set flag that matrix has changed
+			add r5, 0x20
+			stb r5, r1, r3 # clear tile
+			stb r5, r0, r2 # move non-zero tile to the first
+			sub r5, 0x20
 			add r0, -1 # сдвигаем r0 на следующую ячейку
 		else
 			inc r7
