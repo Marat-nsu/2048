@@ -1,5 +1,12 @@
+asect 0xfefc
+is_game_over:
+
+
 asect 0
 main: ext               # Declare labels
+
+
+
 
 default_handler1: ext    # as external
 default_handler2: ext
@@ -64,7 +71,7 @@ main>
     
     
     while
-        ldi r0, 0xfefc
+        ldi r0, is_game_over
         ldb r0, r0
         tst r0
     stays z
