@@ -3,7 +3,7 @@ matrix:
 
 rsect move_left
 
-slide_row_left>
+slide_row_left_offset>
 	ldi r0, 0 # адрес первой ячейки
 	ldi r1, 0 # адрес первой ячейки
 	ldi r3, 0
@@ -17,8 +17,8 @@ slide_row_left>
 		is nz
 			ldi r6, 1 # set flag that matrix has changed
 			add r5, 0x10
-			stb r5, r0, r2 # move non-zero tile to the first
 			stb r5, r1, r3 # clear tile
+			stb r5, r0, r2 # move non-zero tile to the first
 			sub r5, 0x10
 			add r0, 1 # сдвигаем r0 на следующую ячейку
 		else 
@@ -28,7 +28,31 @@ slide_row_left>
 	wend
 	rts
 
+slide_row_left>
+	ldi r0, 0 # адрес первой ячейки
+	ldi r1, 0 # адрес первой ячейки
+	ldi r3, 0
+	ldi r7, 0 # amount of empty tiles
+	while
+		cmp r1, 4
+	stays lt
+		ldb r5, r1, r2
+		if
+			tst r2
+		is nz
+			ldi r6, 1 # set flag that matrix has changed
+			stb r5, r1, r3 # clear tile
+			stb r5, r0, r2 # move non-zero tile to the first
+			add r0, 1 # сдвигаем r0 на следующую ячейку
+		else 
+			inc r7
+		fi
+		add r1, 1 # сдвигаем r1 на следующую ячейку
+	wend
+	rts
+
 merge_row_left>
+	add r5, 0x10
 	ldi r0, 0 # адрес первой ячейки
 	ldi r1, 1 # адрес второй ячейки
 	ldi r7, 0 # has row been changed
@@ -46,20 +70,19 @@ merge_row_left>
 				ldi r7, 1
 				ldi r6, 1 # set flag that matrix has changed
 				add r2, 1
-				add r5, 0x10
 				stb r5, r0, r2
 				ldi r3, 0
 				stb r5, r1, r3
-				sub r5, 0x10
 			fi
 		fi
 		add r0, 1 # переходим на следующую ячейку
 		add r1, 1 # переходим на следующую ячейку
 	wend
+	sub r5, 0x10
 	rts
 
 process_row_left>
-	jsr slide_row_left
+	jsr slide_row_left_offset
 	if
 		cmp r7, 4 # if row is empty, there is nothing we can do
 	is eq
@@ -71,7 +94,9 @@ process_row_left>
 	is z
 		rts
 	fi
+	add r5, 0x10
 	jsr slide_row_left
+	sub r5, 0x10
 	rts
 
 move_left>

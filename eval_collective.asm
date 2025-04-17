@@ -141,6 +141,7 @@ eval_collective>
 	# а добавить свою оценку к result
 	lsw r0, 0 # smoothnes
 	lsw r1, -2 # merge
+	neg r0
 	move r0, r3
 	shl r1, r2, 5 # коэффициент merge - 32
 	add r2, r3, r3

@@ -3,7 +3,7 @@ matrix:
 
 rsect move_down
 
-slide_col_down>
+slide_col_down_offset>
 	ldi r0, 12 # адрес нижней ячейки
 	ldi r1, 12 # тот же адрес
 	ldi r7, 0
@@ -28,7 +28,32 @@ slide_col_down>
 	wend
 	rts
 
+
+slide_col_down>
+	ldi r0, 12 # адрес нижней ячейки
+	ldi r1, 12 # тот же адрес
+	ldi r7, 0
+	ldi r3, 0
+	while
+		cmp r1, 0
+	stays ge
+		ldb r5, r1, r2
+		if
+			tst r2
+		is nz
+			ldi r6, 1 # флаг - поменяли матрицу
+			stb r5, r1, r3 # clear tile
+			stb r5, r0, r2 # move non-zero tile to the first
+			sub r0, 4 # сдвигаем r0 на следующую ячейку
+		else
+			inc r7
+		fi
+		sub r1, 4 # сдвигаем r1 на следующую ячейку
+	wend
+	rts
+
 merge_col_down>
+	add r5, 0x30
 	ldi r0, 12 # адрес первой ячейки
 	ldi r1, 8 # адрес второй ячейки
 	ldi r7, 0
@@ -46,20 +71,19 @@ merge_col_down>
 				ldi r7, 1
 				ldi r6, 1 # set flag that matrix has changed
 				add r2, 1
-				add r5, 0x30
 				stb r5, r0, r2
 				ldi r3, 0
 				stb r5, r1, r3
-				sub r5, 0x30
 			fi
 		fi
 		sub r0, 4 # переходим на следующую ячейку
 		sub r1, 4 # переходим на следующую ячейку
 	wend
+	sub r5, 0x30
 	rts
 
 process_col_down>
-	jsr slide_col_down
+	jsr slide_col_down_offset
 	if
 		cmp r7, 4
 	is eq
@@ -71,7 +95,9 @@ process_col_down>
 	is z
 		rts
 	fi
+	add r5, 0x30
 	jsr slide_col_down
+	sub r5, 0x30
 	rts
 
 move_down>

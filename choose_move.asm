@@ -4,18 +4,26 @@ rsect choose_move
 
 move_matrix>
     #r0 - address of needed matrix
-    #r2 - address of main matrix
-    ldi r6, 0x10
-    add r0, r6, r1
-    ldi r2, 0xff00
+    #r1 - address of main matrix
+    ldi r1, 0xff00
+    ldi r2, 0xff10
+    ldi r3, 0xff20
+    ldi r4, 0xff30
+    ldi r5, 0xff40
+    ldi r6, 0
     while
-        cmp r0, r1
+        cmp r6, 0x10
     stays lt
-        ldb r0, r3
-        stb r2, r3
+        ldb r0, r6, r7
+        stb r1, r6, r7
+        ldi r7, 0
+        # Очищаем поля
+        stb r2, r6, r7
+        stb r3, r6, r7
+        stb r4, r6, r7
+        stb r5, r6, r7
 
-        inc r0
-        inc r2
+        add r6, 1
     wend
     rts
 

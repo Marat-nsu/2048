@@ -3,7 +3,7 @@ matrix:
 
 rsect move_up
 
-slide_row_up>
+slide_row_up_offset>
 	ldi r0, 0 # адрес первой ячейки
 	ldi r1, 0 # адрес первой ячейки
 	ldi r7, 0 # amount of empty tiles
@@ -30,7 +30,32 @@ slide_row_up>
 	wend
 	rts
 
+slide_row_up>
+	ldi r0, 0 # адрес первой ячейки
+	ldi r1, 0 # адрес первой ячейки
+	ldi r7, 0 # amount of empty tiles
+	ldi r3, 0
+	while
+		cmp r1, 16
+	stays lt
+		ldb r5, r1, r2
+		if
+			tst r2
+		is nz
+			ldi r6, 1 # set flag that matrix has changed
+			stb r5, r1, r3 # clear tile
+			stb r5, r0, r2 # move non-zero tile to the first
+			add r0, 4 # сдвигаем r0 на следующую ячейку
+		else 
+			inc r7
+		fi
+		add r1, 4 # сдвигаем r1 на следующую ячейку
+	wend
+	rts
+
 merge_row_up>
+	add r5, 0x30
+	add r5, 0x10
 	ldi r0, 0 # адрес первой ячейки
 	ldi r1, 4 # адрес второй ячейки
 	ldi r7, 0 # has row been changed
@@ -48,22 +73,20 @@ merge_row_up>
 				ldi r7, 1
 				ldi r6, 1 # set flag that matrix has changed
 				add r2, 1
-				add r5, 0x30
-				add r5, 0x10 # 0x40 не влезает в imm6
 				stb r5, r0, r2
 				ldi r3, 0
 				stb r5, r1, r3
-				sub r5, 0x30
-				sub r5, 0x10
 			fi
 		fi
 		add r0, 4 # переходим на следующую ячейку
 		add r1, 4 # переходим на следующую ячейку
 	wend
+	sub r5, 0x30
+	sub r5, 0x10
 	rts
 
 process_row_up>
-	jsr slide_row_up
+	jsr slide_row_up_offset
 	if
 		cmp r7, 4 # if row is empty, there is nothing we can do
 	is eq
@@ -75,7 +98,11 @@ process_row_up>
 	is z
 		rts
 	fi
+	add r5, 0x30
+	add r5, 0x10
 	jsr slide_row_up
+	sub r5, 0x30
+	sub r5, 0x10
 	rts
 
 move_up>
