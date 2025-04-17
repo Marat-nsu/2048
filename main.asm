@@ -54,28 +54,14 @@ move_up: ext
 eval_individual: ext
 
 main>
-
-    # ldi r0, 0xff02
-    # ldi r1, 0xff07
-    # ldi r2, 2
-    # stb r0, r2
-    # stb r1, r2
-    # # # jsr move_right
-    # # # halt
-    # jsr move_left
-    # halt
-
-
     jsr place_tile
 	jsr place_tile
-    
-    
+
     while
         ldi r0, is_game_over
         ldb r0, r0
         tst r0
     stays z
-
         #simulation of movements
         jsr move_left
         jsr move_right
@@ -97,14 +83,9 @@ main>
             jsr eval_individual
             add r0, 0x10
             add r1, 2
-            
-            ldi r0, 0xff07
-            ldi r2, 11
-            stb r0, r2
         wend
 
         jsr choose_move
-
         jsr place_tile
     wend
 

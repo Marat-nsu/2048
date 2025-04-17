@@ -22,13 +22,12 @@ move_matrix>
 
 choose_move>
 
-    # ldw
-    # stw
-
     # find max
     ldi r0, 0
     ldi r1, 0xff50
     ldw r1, r0, r3 #maximum
+    ldi r4, 0xff10 # Поле с максимальной оценкой
+    ldi r5, 0xff10 # Поле для текущей оценки
     while
         cmp r0, 4
     stays lt
@@ -37,43 +36,15 @@ choose_move>
         if
             cmp r3, r2
         is lt
-            move r1, r4 #address of max value
+            move r5, r4 #address of max value
         fi
         add r1, 2
+        add r5, 0x10
         inc r0
     wend
 
+    move r4, r0
+    jsr move_matrix
 
-
-    # choose address of needed matrix
-    if
-        cmp r1, r4
-    is z
-        # 0xff10 - 0xff20
-        ldi r0, 0xff10
-        jsr move_matrix
-    else 
-        if
-            add r1, 2
-            cmp r1, r4
-        is z
-            # 0xff20 - 0xff30
-            ldi r0, 0xff20
-            jsr move_matrix
-        else 
-            if
-                add r1, 2
-                cmp r1, r4
-            is z
-                # 0xff30 - 0xff40
-                ldi r0, 0xff30
-                jsr move_matrix
-            else
-                # 0xff40 - 0xff50
-                ldi r0, 0xff40
-                jsr move_matrix
-            fi
-        fi
-    fi
     rts
 end.
