@@ -29,15 +29,31 @@ rsect exc_handlers
 
 # This handler halts processor
 default_handler1>
+    ldi r0, 0xff00
+    ldi r1, 1
+    ldi r2, 0
+    stb r0, r2, r1
     halt
 
 default_handler2>
+    ldi r0, 0xff00
+    ldi r1, 2
+    ldi r2, 0
+    stb r0, r2, r1
     halt
 
 default_handler3>
+    ldi r0, 0xff00
+    ldi r1, 3
+    ldi r2, 0
+    stb r0, r2, r1
     halt
 
 default_handler4>
+    ldi r0, 0xff00
+    ldi r1, 4
+    ldi r2, 0
+    stb r0, r2, r1
     halt
 
 
@@ -78,9 +94,13 @@ main>
             push r0
             push r1
             jsr eval_collective
+            pop r2
+            pop r2
             push r0
             push r1
             jsr eval_individual
+            pop r2
+            pop r2
             add r0, 0x10
             add r1, 2
         wend
