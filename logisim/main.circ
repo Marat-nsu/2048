@@ -124,6 +124,7 @@
     <wire from="(490,1290)" to="(490,1300)"/>
     <wire from="(600,1080)" to="(600,1090)"/>
     <wire from="(160,1910)" to="(220,1910)"/>
+    <wire from="(360,1720)" to="(410,1720)"/>
     <wire from="(300,1240)" to="(800,1240)"/>
     <wire from="(1440,1600)" to="(1540,1600)"/>
     <wire from="(360,120)" to="(410,120)"/>
@@ -280,7 +281,6 @@
     <wire from="(160,1460)" to="(230,1460)"/>
     <wire from="(840,1270)" to="(850,1270)"/>
     <wire from="(620,1370)" to="(630,1370)"/>
-    <wire from="(340,1720)" to="(410,1720)"/>
     <wire from="(420,1400)" to="(490,1400)"/>
     <wire from="(380,1440)" to="(380,1560)"/>
     <wire from="(510,1660)" to="(520,1660)"/>
@@ -359,6 +359,7 @@
     <wire from="(150,1710)" to="(170,1710)"/>
     <wire from="(1660,830)" to="(1670,830)"/>
     <wire from="(810,1380)" to="(810,1440)"/>
+    <wire from="(240,90)" to="(240,140)"/>
     <wire from="(220,1390)" to="(230,1390)"/>
     <wire from="(220,1150)" to="(230,1150)"/>
     <wire from="(330,200)" to="(410,200)"/>
@@ -384,12 +385,12 @@
     <wire from="(250,1870)" to="(490,1870)"/>
     <wire from="(120,1090)" to="(420,1090)"/>
     <wire from="(710,1400)" to="(820,1400)"/>
-    <wire from="(240,90)" to="(240,180)"/>
     <wire from="(220,1480)" to="(220,1510)"/>
     <wire from="(150,610)" to="(150,640)"/>
     <wire from="(220,1240)" to="(220,1270)"/>
     <wire from="(440,1720)" to="(470,1720)"/>
     <wire from="(390,160)" to="(410,160)"/>
+    <wire from="(240,140)" to="(240,180)"/>
     <wire from="(280,1220)" to="(280,1260)"/>
     <wire from="(150,1680)" to="(170,1680)"/>
     <wire from="(800,1180)" to="(800,1240)"/>
@@ -404,6 +405,7 @@
     <wire from="(800,1060)" to="(810,1060)"/>
     <wire from="(270,1210)" to="(470,1210)"/>
     <wire from="(690,1270)" to="(700,1270)"/>
+    <wire from="(100,80)" to="(100,140)"/>
     <wire from="(510,1170)" to="(520,1170)"/>
     <wire from="(600,1190)" to="(600,1200)"/>
     <wire from="(120,630)" to="(120,640)"/>
@@ -434,10 +436,12 @@
     <wire from="(290,1230)" to="(690,1230)"/>
     <wire from="(220,1330)" to="(230,1330)"/>
     <wire from="(330,140)" to="(410,140)"/>
+    <wire from="(100,140)" to="(240,140)"/>
     <wire from="(160,1100)" to="(230,1100)"/>
     <wire from="(160,1340)" to="(230,1340)"/>
     <wire from="(630,360)" to="(710,360)"/>
     <wire from="(800,1270)" to="(810,1270)"/>
+    <wire from="(100,80)" to="(170,80)"/>
     <wire from="(420,1200)" to="(490,1200)"/>
     <wire from="(510,1060)" to="(520,1060)"/>
     <wire from="(510,1700)" to="(520,1700)"/>
@@ -725,12 +729,6 @@
       <a name="label" val="14_o"/>
       <a name="labelfont" val="SansSerif plain 9"/>
     </comp>
-    <comp lib="0" loc="(340,1720)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="width" val="16"/>
-      <a name="label" val="RAM"/>
-      <a name="labelfont" val="SansSerif plain 9"/>
-    </comp>
     <comp lib="0" loc="(330,170)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="width" val="4"/>
@@ -987,6 +985,12 @@
       <a name="addrWidth" val="16"/>
       <a name="Directory" val="/Users/marat/projects/2048/build/out.img"/>
       <a name="LoadImageFromFile" val="load"/>
+    </comp>
+    <comp lib="0" loc="(360,1720)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="16"/>
+      <a name="label" val="RAM"/>
+      <a name="labelfont" val="SansSerif plain 9"/>
     </comp>
     <comp lib="0" loc="(80,1810)" name="Tunnel">
       <a name="facing" val="east"/>
