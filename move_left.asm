@@ -3,10 +3,46 @@ matrix:
 
 rsect move_left
 
-slide_row_left_offset>
+
+final_slide_row_left>
 	ldi r0, 0 # адрес первой ячейки
 	ldi r1, 0 # адрес первой ячейки
 	ldi r3, 0
+	while
+		cmp r1, 4
+	stays lt
+		ldb r5, r1, r2
+		if
+			tst r2
+		is nz
+			stb r5, r1, r3 # clear tile
+			stb r5, r0, r2 # move non-zero tile to the first
+			add r0, 1 # сдвигаем r0 на следующую ячейку
+		fi
+		add r1, 1 # сдвигаем r1 на следующую ячейку
+	wend
+	rts
+
+slide_row_left>
+
+	ldi r3, 0 # helper 0 for clearing tile
+
+	# обнуление строк
+	add r5, 0x10
+	ldi r0, 0
+	ldi r1, 0
+	while
+		cmp r1, 4 
+	stays lt
+		stb r5, r0, r3
+		inc r0
+		inc r1
+	wend
+	sub r5, 0x10
+	
+	ldi r0, 0 # адрес первой ячейки
+	ldi r1, 0 # адрес первой ячейки
+
 	ldi r7, 0 # amount of empty tiles
 	while
 		cmp r1, 4
@@ -28,34 +64,13 @@ slide_row_left_offset>
 	wend
 	rts
 
-slide_row_left>
-	ldi r0, 0 # адрес первой ячейки
-	ldi r1, 0 # адрес первой ячейки
-	ldi r3, 0
-	ldi r7, 0 # amount of empty tiles
-	while
-		cmp r1, 4
-	stays lt
-		ldb r5, r1, r2
-		if
-			tst r2
-		is nz
-			ldi r6, 1 # set flag that matrix has changed
-			stb r5, r1, r3 # clear tile
-			stb r5, r0, r2 # move non-zero tile to the first
-			add r0, 1 # сдвигаем r0 на следующую ячейку
-		else 
-			inc r7
-		fi
-		add r1, 1 # сдвигаем r1 на следующую ячейку
-	wend
-	rts
-
 merge_row_left>
-	add r5, 0x10
 	ldi r0, 0 # адрес первой ячейки
 	ldi r1, 1 # адрес второй ячейки
 	ldi r7, 0 # has row been changed
+
+	add r5, 0x10
+
 	while
 		cmp r1, 4
 	stays lt
@@ -78,11 +93,13 @@ merge_row_left>
 		add r0, 1 # переходим на следующую ячейку
 		add r1, 1 # переходим на следующую ячейку
 	wend
+
 	sub r5, 0x10
+	
 	rts
 
 process_row_left>
-	jsr slide_row_left_offset
+	jsr slide_row_left
 	if
 		cmp r7, 4 # if row is empty, there is nothing we can do
 	is eq
@@ -94,9 +111,6 @@ process_row_left>
 	is z
 		rts
 	fi
-	add r5, 0x10
-	jsr slide_row_left
-	sub r5, 0x10
 	rts
 
 move_left>
@@ -108,6 +122,11 @@ move_left>
 		cmp r5, r4
 	stays lt
 		jsr process_row_left
+
+		add r5, 0x10
+		jsr final_slide_row_left
+		sub r5, 0x10
+
 		add r5, 4 # переходим на следующий ряд
 	wend
 	rts
