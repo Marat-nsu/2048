@@ -29,31 +29,15 @@ rsect exc_handlers
 
 # This handler halts processor
 default_handler1>
-    ldi r0, 0xff00
-    ldi r1, 1
-    ldi r2, 0
-    stb r0, r2, r1
     halt
 
 default_handler2>
-    ldi r0, 0xff00
-    ldi r1, 2
-    ldi r2, 0
-    stb r0, r2, r1
     halt
 
 default_handler3>
-    ldi r0, 0xff00
-    ldi r1, 3
-    ldi r2, 0
-    stb r0, r2, r1
     halt
 
 default_handler4>
-    ldi r0, 0xff00
-    ldi r1, 4
-    ldi r2, 0
-    stb r0, r2, r1
     halt
 
 
@@ -70,20 +54,101 @@ move_up: ext
 eval_individual: ext
 
 main>
+
+#>
+####complex check for move_up and move_down
+    # ldi r2, 1
+    # ldi r0, 0xff00
+    # ldi r1, 0xff04
+    # stb r0, r2
+    # stb r1, r2
+    
+
+    # ldi r0, 0xff01
+    # ldi r1, 0xff09
+    # stb r0, r2
+    # stb r1, r2
+    # ldi r0, 0xff05
+    # ldi r1, 0xff0d
+    # stb r0, r2
+    # stb r1, r2
+
+
+    # ldi r0, 0xff03
+    # stb r0, r2
+
+
+    # ldi r0, 0xff0a
+    # ldi r1, 0xff06
+    # stb r0, r2
+    # stb r1, r2
+
+    # ldi r2, 2
+    # ldi r0, 0xff08
+    # stb r0, r2
+
+    # ldi r0, 0xff02
+    # stb r0, r2
+####complex check for move_up and move_down
+#<
+
+#>
+####complex check for move_left and move_right
+    # ldi r2, 1
+    # ldi r0, 0xff00
+    # ldi r1, 0xff01
+    # stb r0, r2
+    # stb r1, r2
+    # ldi r0, 0xff02
+    # ldi r1, 0xff03
+    # stb r0, r2
+    # stb r1, r2
+    
+
+    # ldi r0, 0xff04
+    # ldi r1, 0xff05
+    # stb r0, r2
+    # stb r1, r2
+    
+
+
+    # ldi r0, 0xff08
+    # stb r0, r2
+
+
+    # ldi r0, 0xff0c
+    # ldi r1, 0xff0d
+    # stb r0, r2
+    # stb r1, r2
+
+    # ldi r0, 0xff0e
+    # stb r0, r2
+    # ldi r2, 2
+
+    # ldi r0, 0xff06
+    # stb r0, r2
+####complex check for move_left and move_right
+#<
+
+
     jsr place_tile
 	jsr place_tile
-
+    
+    
     while
         ldi r0, is_game_over
         ldb r0, r0
         tst r0
     stays z
+
         #simulation of movements
         jsr move_left
         jsr move_right
         jsr move_down
         jsr move_up
         
+
+
         #choosing the best move
         ldi r0, 0xff00
         ldi r1, 0xff50
@@ -94,18 +159,27 @@ main>
             push r0
             push r1
             jsr eval_collective
-            pop r2
-            pop r2
             push r0
             push r1
             jsr eval_individual
-            pop r2
-            pop r2
+
+            pop r1
+            pop r0
+            pop r1
+            pop r0
+
             add r0, 0x10
             add r1, 2
+            
+        #2048 in the tile 
+        #(check of the end)
+            # ldi r0, 0xff07
+            # ldi r2, 11
+            # stb r0, r2
         wend
 
         jsr choose_move
+
         jsr place_tile
     wend
 
