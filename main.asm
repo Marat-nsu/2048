@@ -132,7 +132,7 @@ main>
 
 
     jsr place_tile
-	jsr place_tile
+    jsr place_tile
     
     
     while
