@@ -85,7 +85,7 @@ main>
         jsr move_up
         
         #choosing the best move
-        ldi r0, 0xff00
+        ldi r0, 0xff10
         ldi r1, 0xff50
         while
             ldi r2, 0xff58
