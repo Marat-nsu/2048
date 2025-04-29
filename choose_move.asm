@@ -36,14 +36,15 @@ choose_move>
     ldw r1, r0, r3 #maximum
     ldi r4, 0xff10 # Поле с максимальной оценкой
     ldi r5, 0xff10 # Поле для текущей оценки
+    ldi r6, 0
     while
         cmp r0, 4
     stays lt
         
-        ldw r1, r0, r2 #current value
+        ldw r1, r6, r2 #current value
         if
             cmp r3, r2
-        is lt
+        is ls
             move r5, r4 #address of max value
         fi
         add r1, 2
