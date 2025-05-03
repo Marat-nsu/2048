@@ -35,8 +35,11 @@ choose_tile>
 	ldi r0, 0
 	ldi r1, random
 	ldw r1, r1
-	shra r1
-	addc r0, r0, r0 
+	if
+		cmp r1, 13
+	is hi
+		add r0, 1
+	fi
 	add r0, 1 # C is set to 0 or 1, we add 1 to get valid power of 2
 	rts
 

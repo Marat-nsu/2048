@@ -140,6 +140,7 @@ eval_collective>
 	# функция eval_individual должна не записать оценку в result,
 	# а добавить свою оценку к result
 	lsw r0, 0 # smoothnes
+	shl r0, 3 # weight smooth
 	lsw r1, -2 # merge
 	neg r0
 	move r0, r3
@@ -147,7 +148,7 @@ eval_collective>
 	add r2, r3, r3
 	
 	add r1, 24 # mono = merge + 24
-	shl r1, r1, 6 # коэффициент mono - 64
+	shl r1, r1, 1 # коэффициент mono - 2
 	add r1, r3, r3
 	lsw r4, 4 # result
 	stw r4, r3

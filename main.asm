@@ -94,10 +94,6 @@ main>
             push r0
             push r1
             jsr eval_collective
-            pop r2
-            pop r2
-            push r0
-            push r1
             jsr eval_individual
             pop r2
             pop r2
