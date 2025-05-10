@@ -110,7 +110,7 @@ activation_of_button_check>
         ldi r0, cell_for_imposible_moves
         ldi r1, 0
         stb r0, r1
-        
+
         if
             ldi r0, is_left
             ldb r0, r0
@@ -129,71 +129,65 @@ activation_of_button_check>
                     #step to the up
                     jsr move_up
 
-                    # matrix isn't changed -> can't move       (for now only for hand-mode)
+                    # matrix is changed -> can move       (for now only for hand-mode)
                     if 
                         tst r6 
-                    is z
-                        ldi r5, cell_for_imposible_moves
-                        ldi r4, -1
-                        stb r5, r4
+                    is nz
+                        ldi r0, 0xff57
+                        stb r0, 0xff 
+                        
+                        jsr choose_move
+                        jsr place_tile
                     fi
                     
-                    ldi r0, 0xff57
-                    stb r0, 0xff 
-                    jsr check_move
-
                 else
                     #step to the down
                     jsr move_down
                     
-                    # matrix isn't changed -> can't move       (for now only for hand-mode)
+                    # matrix is changed -> can move       (for now only for hand-mode)
                     if 
                         tst r6 
-                    is z
-                        ldi r5, cell_for_imposible_moves
-                        ldi r4, -1
-                        stb r5, r4
-                    fi
+                    is nz
+                        ldi r0, 0xff55
+                        stb r0, 0xff 
 
-                    ldi r0, 0xff55
-                    stb r0, 0xff 
-                    jsr check_move
+                        jsr choose_move
+                        jsr place_tile
+                    fi
                 fi
                 
             else
                 #step to the right
                 jsr move_right
                 
-                # matrix isn't changed -> can't move       (for now only for hand-mode)
+                # matrix is changed -> can move       (for now only for hand-mode)
                 if 
                     tst r6 
-                is z
-                    ldi r5, cell_for_imposible_moves
-                    ldi r4, -1
-                    stb r5, r4
+                is nz
+                    ldi r0, 0xff53
+                    stb r0, 0xff
+
+                    jsr choose_move
+                    jsr place_tile                    
                 fi
 
-                ldi r0, 0xff53
-                stb r0, 0xff 
-                jsr check_move
+                
             fi
 
         else
             #step to the left
             jsr move_left
 
-            # matrix isn't changed -> can't move       (for now only for hand-mode)
+            # matrix is changed -> can move       (for now only for hand-mode)
             if 
                 tst r6 
-            is z
-                ldi r5, cell_for_imposible_moves
-                ldi r4, -1
-                stb r5, r4
+            is nz
+                ldi r0, 0xff51
+                stb r0, 0xff 
+
+                jsr choose_move
+                jsr place_tile
             fi
-                    
-            ldi r0, 0xff51
-            stb r0, 0xff 
-            jsr check_move
         fi
     else
         jsr ai_check
@@ -244,8 +238,6 @@ ai_check>
     rts
 
 main>
-
-    
 
     jsr place_tile
 	jsr place_tile
