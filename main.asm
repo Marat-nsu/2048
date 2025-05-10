@@ -2,22 +2,20 @@ asect 0xfefc
 is_game_over:
 
 
+asect 0xff58
+cell_for_imposible_moves:
 asect 0xfef4
 is_ai_playing:
 
 ##-for-buttons-######
 asect 0xfef6
 is_any_button_active:
-
 asect 0xfef8
 is_left:
-
 asect 0xfef9
 is_right:
-
 asect 0xfefa
 is_down:
-
 asect 0xfefb
 is_up:
 
@@ -108,6 +106,11 @@ activation_of_button_check>
         ldb r0, r0
         tst r0
     is nz
+
+        ldi r0, cell_for_imposible_moves
+        ldi r1, 0
+        stb r0, r1
+        
         if
             ldi r0, is_left
             ldb r0, r0
@@ -125,6 +128,15 @@ activation_of_button_check>
                 is z
                     #step to the up
                     jsr move_up
+
+                    # matrix isn't changed -> can't move       (for now only for hand-mode)
+                    if 
+                        tst r6 
+                    is z
+                        ldi r5, cell_for_imposible_moves
+                        ldi r4, -1
+                        stb r5, r4
+                    fi
                     
                     ldi r0, 0xff57
                     stb r0, 0xff 
@@ -134,6 +146,15 @@ activation_of_button_check>
                     #step to the down
                     jsr move_down
                     
+                    # matrix isn't changed -> can't move       (for now only for hand-mode)
+                    if 
+                        tst r6 
+                    is z
+                        ldi r5, cell_for_imposible_moves
+                        ldi r4, -1
+                        stb r5, r4
+                    fi
+
                     ldi r0, 0xff55
                     stb r0, 0xff 
                     jsr check_move
@@ -142,7 +163,16 @@ activation_of_button_check>
             else
                 #step to the right
                 jsr move_right
-                    
+                
+                # matrix isn't changed -> can't move       (for now only for hand-mode)
+                if 
+                    tst r6 
+                is z
+                    ldi r5, cell_for_imposible_moves
+                    ldi r4, -1
+                    stb r5, r4
+                fi
+
                 ldi r0, 0xff53
                 stb r0, 0xff 
                 jsr check_move
@@ -151,6 +181,15 @@ activation_of_button_check>
         else
             #step to the left
             jsr move_left
+
+            # matrix isn't changed -> can't move       (for now only for hand-mode)
+            if 
+                tst r6 
+            is z
+                ldi r5, cell_for_imposible_moves
+                ldi r4, -1
+                stb r5, r4
+            fi
                     
             ldi r0, 0xff51
             stb r0, 0xff 
@@ -169,6 +208,9 @@ ai_check>
         ldb r0, r0
         tst r0
     is nz
+
+        
+
         #simulation of movements
         jsr move_left
         jsr move_right
@@ -202,6 +244,9 @@ ai_check>
     rts
 
 main>
+
+    
+
     jsr place_tile
 	jsr place_tile
 
