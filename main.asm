@@ -192,8 +192,9 @@ ai_check>
             add r1, 2
         wend
 
-        jsr check_move
-        
+        jsr choose_move
+        jsr place_tile
+
     else
         jsr activation_of_button_check
     fi
