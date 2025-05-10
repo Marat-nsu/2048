@@ -2,6 +2,26 @@ asect 0xfefc
 is_game_over:
 
 
+asect 0xfef4
+is_ai_playing:
+
+##-for-buttons-######
+asect 0xfef6
+is_any_button_active:
+
+asect 0xfef8
+is_left:
+
+asect 0xfef9
+is_right:
+
+asect 0xfefa
+is_down:
+
+asect 0xfefb
+is_up:
+
+
 asect 0
 main: ext               # Declare labels
 
@@ -69,15 +89,86 @@ move_down: ext
 move_up: ext
 eval_individual: ext
 
-main>
-    jsr place_tile
-	jsr place_tile
+check_move>
 
-    while
-        ldi r0, is_game_over
+    if
+        ldi r0, 0xff58 # -1 if the move is impossible
         ldb r0, r0
         tst r0
-    stays z
+    is z
+        jsr choose_move
+        jsr place_tile
+    fi
+
+    rts
+
+activation_of_button_check>
+    if
+        ldi r0, is_any_button_active
+        ldb r0, r0
+        tst r0
+    is nz
+        if
+            ldi r0, is_left
+            ldb r0, r0
+            tst r0
+        is z
+            if
+                ldi r0, is_right
+                ldb r0, r0
+                tst r0
+            is z
+                if
+                    ldi r0, is_down
+                    ldb r0, r0
+                    tst r0
+                is z
+                    #step to the up
+                    jsr move_up
+                    
+                    ldi r0, 0xff57
+                    stb r0, 0xff 
+                    jsr check_move
+
+                else
+                    #step to the down
+                    jsr move_down
+                    
+                    ldi r0, 0xff55
+                    stb r0, 0xff 
+                    jsr check_move
+                fi
+                
+            else
+                #step to the right
+                jsr move_right
+                    
+                ldi r0, 0xff53
+                stb r0, 0xff 
+                jsr check_move
+            fi
+
+        else
+            #step to the left
+            jsr move_left
+                    
+            ldi r0, 0xff51
+            stb r0, 0xff 
+            jsr check_move
+        fi
+    else
+        jsr ai_check
+    fi 
+
+    rts
+
+
+ai_check>
+    if 
+        ldi r0, is_ai_playing
+        ldb r0, r0
+        tst r0
+    is nz
         #simulation of movements
         jsr move_left
         jsr move_right
@@ -101,8 +192,26 @@ main>
             add r1, 2
         wend
 
-        jsr choose_move
-        jsr place_tile
+        jsr check_move
+        
+    else
+        jsr activation_of_button_check
+    fi
+
+    rts
+
+main>
+    jsr place_tile
+	jsr place_tile
+
+    while
+        ldi r0, is_game_over
+        ldb r0, r0
+        tst r0
+    stays z
+
+        jsr ai_check
+        
     wend
 
 	halt
