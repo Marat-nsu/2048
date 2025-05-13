@@ -55,8 +55,8 @@ merge_row_left>
 				stb r5, r1, r3
 			fi
 		fi
-		add r0, 1 # переходим на следующую ячейку
-		add r1, 1 # переходим на следующую ячейку
+		add r0, 1 # go to the next tile
+		add r1, 1 # go to the next tile
 	wend
 	rts
 
@@ -79,14 +79,14 @@ process_row_left>
 move_left>
 	ldi r6, 0
 	# r6 has matrix changed
-	ldi r5, matrix # адрес обрабатываемого ряда
+	ldi r5, matrix # address of processed row
 	move r5, r4
-	add r4, 0x10 # адрес конца матрицы
+	add r4, 0x10 # address of end of the matrix
 	while
 		cmp r5, r4
 	stays lt
 		jsr process_row_left
-		add r5, 4 # переходим на следующий ряд
+		add r5, 4 # go to the next row
 	wend
 	if
 		tst r6
@@ -97,18 +97,18 @@ move_left>
 	fi
 	rts
 
-# такая же функция как и move_left, только адрес поля другой
+# same function as move_left, but with different game field address
 move_left_ai>
 	ldi r6, 0
 	# r6 has matrix changed
-	ldi r5, matrix_ai # адрес обрабатываемого ряда
+	ldi r5, matrix_ai
 	move r5, r4
-	add r4, 0x10 # адрес конца матрицы
+	add r4, 0x10
 	while
 		cmp r5, r4
 	stays lt
 		jsr process_row_left
-		add r5, 4 # переходим на следующий ряд
+		add r5, 4
 	wend
 	if
 		tst r6

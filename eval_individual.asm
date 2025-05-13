@@ -23,7 +23,7 @@ eval_individual>
     stays lt
         ldb r0, r2, r3  
 
-        # нахождение максимума
+        # find maximum
         if
             cmp r3, r4
         is gt
@@ -31,7 +31,7 @@ eval_individual>
             move r2, r5
         fi
 
-        # подсчет свободных
+        # count empty
         if
             tst r3
         is z
@@ -41,7 +41,7 @@ eval_individual>
         inc r2
     wend
 
-    # corner в углу
+    # corner
     ldi r1, 0
     if
         cmp r5, 0

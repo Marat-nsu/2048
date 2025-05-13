@@ -19,7 +19,7 @@ move_matrix>
         ldb r0, r6, r7
         stb r1, r6, r7
         ldi r7, 0
-        # Очищаем поля
+        # clear fields
         stb r2, r6, r7
         stb r3, r6, r7
         stb r4, r6, r7
@@ -39,14 +39,14 @@ choose_move>
     ldi r0, 0
     ldi r1, 0xff50
     ldw r1, r0, r3 #maximum
-    ldi r4, 0xff10 # Поле с максимальной оценкой
-    ldi r5, 0xff10 # Поле для текущей оценки
+    ldi r4, 0xff10 # Field with the highest score
+    ldi r5, 0xff10 # Field for the current score
     ldi r6, 0
     while
         cmp r0, 4
     stays lt
         
-        ldw r1, r6, r2 #current value
+        ldw r1, r6, r2 # current value
         if
             cmp r3, r2
         is ls
@@ -55,7 +55,7 @@ choose_move>
             is eq
                 continue
             fi
-            move r5, r4 #address of max value
+            move r5, r4 # address of max value
         fi
         add r1, 2
         add r5, 0x10

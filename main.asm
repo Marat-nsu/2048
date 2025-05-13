@@ -40,14 +40,14 @@ default_handler>
 rsect main
 
 #
-# БАЗА
+# BASIC FUNCTIONS
 #
 
 place_tile: ext
 sync_fields: ext
 
 #
-# ХОД ИГРОКА
+# PLAYER MOVE
 #
 
 move_left: ext
@@ -56,7 +56,7 @@ move_down: ext
 move_up: ext
 
 #
-# ИИ
+# AI
 #
 
 move_ai: ext
@@ -95,7 +95,7 @@ main>
                     continue
                 fi
 
-                # Влево
+                # Left
                 if
                     cmp r0, 1
                 is eq
@@ -113,7 +113,7 @@ main>
                     break
                 fi
 
-                # Вправо
+                # Right
                 if
                     cmp r0, 2
                 is eq
@@ -131,7 +131,7 @@ main>
                     break
                 fi
 
-                # Вниз
+                # Down
                 if
                     cmp r0, 4
                 is eq
@@ -149,7 +149,7 @@ main>
                     break
                 fi
 
-                # Вверх
+                # Up
                 if
                     cmp r0, 8
                 is eq

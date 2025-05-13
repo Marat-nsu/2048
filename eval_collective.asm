@@ -97,9 +97,9 @@ eval_collective>
 	ldsp r7
 	addsp -6
 
-	lsw r0, 6 #matrix begin
+	lsw r0, 6 # matrix begin
 	lsw r1, 6
-	add r1, 0x10 #matrix end
+	add r1, 0x10 # matrix end
 	# rows
 	while
 		cmp r0, r1
@@ -135,20 +135,19 @@ eval_collective>
 		add r0, 1
 	wend
 
-	# Эта функция очищает значение которое хранилось по 
-	# адресу result, 
-	# функция eval_individual должна не записать оценку в result,
-	# а добавить свою оценку к result
+	# This function clears the value stored at the address result,
+	# the function eval_individual should not write the score to result,
+	# but add its score to result
 	lsw r0, 0 # smoothnes
 	shl r0, 3 # weight smooth
 	lsw r1, -2 # merge
 	neg r0
 	move r0, r3
-	shl r1, r2, 5 # коэффициент merge - 32
+	shl r1, r2, 5 # coefficient merge - 32
 	add r2, r3, r3
 	
 	add r1, 24 # mono = merge + 24
-	shl r1, r1, 1 # коэффициент mono - 2
+	shl r1, r1, 1 # coefficient mono - 2
 	add r1, r3, r3
 	lsw r4, 4 # result
 	stw r4, r3

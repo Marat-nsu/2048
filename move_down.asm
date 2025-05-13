@@ -7,8 +7,8 @@ rsect move_down
 
 
 slide_col_down>
-	ldi r0, 12 # адрес нижней ячейки
-	ldi r1, 12 # тот же адрес
+	ldi r0, 12 # address of bottom tile
+	ldi r1, 12 # same address
 	ldi r7, 0
 	ldi r3, 0
 	while
@@ -21,21 +21,21 @@ slide_col_down>
 			if
 				cmp r0, r1
 			is ne
-				ldi r6, 1 # флаг - поменяли матрицу
+				ldi r6, 1 # has matrix been changed
 				stb r5, r1, r3 # clear tile
 				stb r5, r0, r2 # move non-zero tile to the first
 			fi
-			sub r0, 4 # сдвигаем r0 на следующую ячейку
+			sub r0, 4 # move r0 to the next tile
 		else
 			inc r7
 		fi
-		sub r1, 4 # сдвигаем r1 на следующую ячейку
+		sub r1, 4 # move r1 to the next tile
 	wend
 	rts
 
 merge_col_down>
-	ldi r0, 12 # адрес первой ячейки
-	ldi r1, 8 # адрес второй ячейки
+	ldi r0, 12 # address of the first tile
+	ldi r1, 8 # address of the second tile
 	ldi r7, 0
 	while
 		cmp r1, 0
@@ -56,8 +56,8 @@ merge_col_down>
 				stb r5, r1, r3
 			fi
 		fi
-		sub r0, 4 # переходим на следующую ячейку
-		sub r1, 4 # переходим на следующую ячейку
+		sub r0, 4 # go to the next tile
+		sub r1, 4 # go to the next tile
 	wend
 	rts
 
@@ -80,14 +80,14 @@ process_col_down>
 move_down>
 	ldi r6, 0
 	# r6 has matrix changed
-	ldi r5, matrix # адрес обрабатываемого сполбца
+	ldi r5, matrix # address of processed column
 	move r5, r4
-	add r4, 4 # адрес последнего столбца
+	add r4, 4 # address of the last column
 	while
 		cmp r5, r4
 	stays lt
 		jsr process_col_down
-		add r5, 1 # переходим на след столб
+		add r5, 1 # go to the next column
 	wend
 	if
 		tst r6
@@ -100,15 +100,14 @@ move_down>
 
 move_down_ai>
 	ldi r6, 0
-	# r6 has matrix changed
-	ldi r5, matrix_ai # адрес обрабатываемого сполбца
+	ldi r5, matrix_ai
 	move r5, r4
-	add r4, 4 # адрес последнего столбца
+	add r4, 4
 	while
 		cmp r5, r4
 	stays lt
 		jsr process_col_down
-		add r5, 1 # переходим на след столб
+		add r5, 1
 	wend
 	if
 		tst r6

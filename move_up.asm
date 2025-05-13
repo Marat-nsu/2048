@@ -5,9 +5,9 @@ matrix_ai:
 
 rsect move_up
 
-slide_row_up>
-	ldi r0, 0 # адрес первой ячейки
-	ldi r1, 0 # адрес первой ячейки
+slide_col_up>
+	ldi r0, 0 # address of the first tile
+	ldi r1, 0 # address of the first tile
 	ldi r7, 0 # amount of empty tiles
 	ldi r3, 0
 	while
@@ -24,17 +24,17 @@ slide_row_up>
 				stb r5, r1, r3 # clear tile
 				stb r5, r0, r2 # move non-zero tile to the first
 			fi
-			add r0, 4 # сдвигаем r0 на следующую ячейку
+			add r0, 4 # move r0 to the next tile
 		else 
 			inc r7
 		fi
-		add r1, 4 # сдвигаем r1 на следующую ячейку
+		add r1, 4 # move r1 to the next tile
 	wend
 	rts
 
-merge_row_up>
-	ldi r0, 0 # адрес первой ячейки
-	ldi r1, 4 # адрес второй ячейки
+merge_col_up>
+	ldi r0, 0 # address of the first tile
+	ldi r1, 4 # address of the second tile
 	ldi r7, 0 # has row been changed
 	while
 		cmp r1, 16
@@ -55,38 +55,38 @@ merge_row_up>
 				stb r5, r1, r3
 			fi
 		fi
-		add r0, 4 # переходим на следующую ячейку
-		add r1, 4 # переходим на следующую ячейку
+		add r0, 4 # go to the next tile
+		add r1, 4 # go to the next tile
 	wend
 	rts
 
-process_row_up>
-	jsr slide_row_up
+process_col_up>
+	jsr slide_col_up
 	if
 		cmp r7, 4 # if row is empty, there is nothing we can do
 	is eq
 		rts
 	fi
-	jsr merge_row_up
+	jsr merge_col_up
 	if
 		tst r7 # if row hasn't been changed, there is nothing we can do
 	is z
 		rts
 	fi
-	jsr slide_row_up
+	jsr slide_col_up
 	rts
 
 move_up>
 	ldi r6, 0
 	# r6 has matrix changed
-	ldi r5, matrix # адрес обрабатываемого столбца
+	ldi r5, matrix # address of processed column
 	move r5, r4
-	add r4, 4 # адрес последнего столбика
+	add r4, 4 # address of the last column
 	while
 		cmp r5, r4
 	stays lt
-		jsr process_row_up
-		add r5, 1 # переходим на следующий ряд
+		jsr process_col_up
+		add r5, 1 # go to the next column
 	wend
 	if
 		tst r6
@@ -99,15 +99,14 @@ move_up>
 
 move_up_ai>
 	ldi r6, 0
-	# r6 has matrix changed
-	ldi r5, matrix_ai # адрес обрабатываемого столбца
+	ldi r5, matrix_ai
 	move r5, r4
-	add r4, 4 # адрес последнего столбика
+	add r4, 4
 	while
 		cmp r5, r4
 	stays lt
-		jsr process_row_up
-		add r5, 1 # переходим на следующий ряд
+		jsr process_col_up
+		add r5, 1
 	wend
 	if
 		tst r6
