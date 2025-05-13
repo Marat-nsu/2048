@@ -1,6 +1,8 @@
 asect 0xfefc
 is_game_over:
 
+asect 0xfefa
+direction:
 
 asect 0
 main: ext               # Declare labels
@@ -35,7 +37,6 @@ rsect main
 # БАЗА
 #
 
-choose_move: ext
 place_tile: ext
 sync_fields: ext
 
@@ -52,13 +53,7 @@ move_up: ext
 # ИИ
 #
 
-move_left_ai: ext
-move_right_ai: ext
-move_down_ai: ext
-move_up_ai: ext
-
-eval_collective: ext
-eval_individual: ext
+move_ai: ext
 
 
 main>
@@ -70,31 +65,7 @@ main>
         ldb r0, r0
         tst r0
     stays z
-        jsr sync_fields
-        # simulation of movements
-        jsr move_left_ai
-        jsr move_right_ai
-        jsr move_down_ai
-        jsr move_up_ai
-        
-        #choosing the best move
-        ldi r0, 0xff10
-        ldi r1, 0xff50
-        while
-            ldi r2, 0xff58
-            cmp r1, r2
-        stays lt
-            push r0
-            push r1
-            jsr eval_collective
-            jsr eval_individual
-            pop r2
-            pop r2
-            add r0, 0x10
-            add r1, 2
-        wend
-
-        jsr choose_move
+        jsr move_ai
         jsr place_tile
     wend
 
