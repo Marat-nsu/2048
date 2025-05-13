@@ -1,3 +1,5 @@
+asect 0xff63
+choosing:
 
 rsect choose_move
 
@@ -29,6 +31,9 @@ move_matrix>
 
 
 choose_move>
+    ldi r0, choosing
+    ldi r1, 1
+    stb r0, r1
 
     # find max
     ldi r0, 0
@@ -55,5 +60,8 @@ choose_move>
     move r4, r0
     jsr move_matrix
 
+    ldi r0, choosing
+    ldi r1, 0
+    stb r0, r1
     rts
 end.

@@ -1,3 +1,8 @@
+asect 0xff61
+simulating:
+asect 0xff62
+evaluating:
+
 rsect move_ai
 
 sync_fields: ext
@@ -12,12 +17,22 @@ eval_individual: ext
 choose_move: ext
 
 move_ai>
+	ldi r0, simulating
+	ldi r1, 1
+	stb r0, r1 
 	jsr sync_fields
 	# simulation of movements
 	jsr move_left_ai
 	jsr move_right_ai
 	jsr move_down_ai
 	jsr move_up_ai
+
+	ldi r0, simulating
+	ldi r1, 0
+	stb r0, r1
+	ldi r0, evaluating
+	ldi r1, 1
+	stb r0, r1
 	
 	#choosing the best move
 	ldi r0, 0xff10
@@ -35,6 +50,10 @@ move_ai>
 		add r0, 0x10
 		add r1, 2
 	wend
+
+	ldi r0, evaluating
+	ldi r1, 0
+	stb r0, r1
 
 	jsr choose_move
 	rts

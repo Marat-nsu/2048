@@ -7,6 +7,9 @@ direction:
 asect 0xfef8
 is_ai:
 
+asect 0xff60
+status:
+
 asect 0
 main: ext               # Declare labels
 
@@ -62,7 +65,7 @@ move_ai: ext
 main>
     jsr place_tile
 	jsr place_tile
-
+    
     while
         ldi r0, is_game_over
         ldb r0, r0
@@ -80,6 +83,9 @@ main>
                 ldw r0, r0
                 tst r0
             stays z
+                ldi r0, status
+                ldi r1, 1
+                stb r0, r1
                 ldi r0, direction
                 ldw r0, r0
                 if
@@ -92,6 +98,9 @@ main>
                 if
                     cmp r0, 1
                 is eq
+                    ldi r0, status
+                    ldi r1, 0
+                    stb r0, r1
                     jsr move_left
                     break
                 fi
@@ -100,6 +109,9 @@ main>
                 if
                     cmp r0, 2
                 is eq
+                    ldi r0, status
+                    ldi r1, 0
+                    stb r0, r1
                     jsr move_right
                     break
                 fi
@@ -108,6 +120,9 @@ main>
                 if
                     cmp r0, 4
                 is eq
+                    ldi r0, status
+                    ldi r1, 0
+                    stb r0, r1
                     jsr move_down
                     break
                 fi
@@ -116,10 +131,16 @@ main>
                 if
                     cmp r0, 8
                 is eq
+                    ldi r0, status
+                    ldi r1, 0
+                    stb r0, r1
                     jsr move_up
                     break
                 fi
             wend
+            ldi r0, status
+            ldi r1, 0
+            stb r0, r1
             if
                 ldi r0, is_ai
                 ldw r0, r0
