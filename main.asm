@@ -37,6 +37,7 @@ rsect main
 
 choose_move: ext
 place_tile: ext
+sync_fields: ext
 
 #
 # ХОД ИГРОКА
@@ -69,11 +70,12 @@ main>
         ldb r0, r0
         tst r0
     stays z
-        #simulation of movements
-        jsr move_left
-        jsr move_right
-        jsr move_down
-        jsr move_up
+        jsr sync_fields
+        # simulation of movements
+        jsr move_left_ai
+        jsr move_right_ai
+        jsr move_down_ai
+        jsr move_up_ai
         
         #choosing the best move
         ldi r0, 0xff10
