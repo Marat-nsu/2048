@@ -65,7 +65,7 @@ move_ai: ext
 main>
     jsr place_tile
 	jsr place_tile
-    
+
     while
         ldi r0, is_game_over
         ldb r0, r0
@@ -77,6 +77,7 @@ main>
             tst r0
         is nz
             jsr move_ai
+            jsr place_tile
         else
             while
                 ldi r0, is_ai
@@ -102,6 +103,13 @@ main>
                     ldi r1, 0
                     stb r0, r1
                     jsr move_left
+                    if
+                        ldi r0, 0xff50
+                        ldw r0, r0
+                        cmp r0, -1
+                    is ne
+                        jsr place_tile
+                    fi
                     break
                 fi
 
@@ -113,6 +121,13 @@ main>
                     ldi r1, 0
                     stb r0, r1
                     jsr move_right
+                    if
+                        ldi r0, 0xff52
+                        ldw r0, r0
+                        cmp r0, -1
+                    is ne
+                        jsr place_tile
+                    fi
                     break
                 fi
 
@@ -124,6 +139,13 @@ main>
                     ldi r1, 0
                     stb r0, r1
                     jsr move_down
+                    if
+                        ldi r0, 0xff54
+                        ldw r0, r0
+                        cmp r0, -1
+                    is ne
+                        jsr place_tile
+                    fi
                     break
                 fi
 
@@ -135,6 +157,13 @@ main>
                     ldi r1, 0
                     stb r0, r1
                     jsr move_up
+                    if
+                        ldi r0, 0xff56
+                        ldw r0, r0
+                        cmp r0, -1
+                    is ne
+                        jsr place_tile
+                    fi
                     break
                 fi
             wend
@@ -147,9 +176,9 @@ main>
                 tst r0
             is nz
                 jsr move_ai
+                jsr place_tile
             fi
         fi
-        jsr place_tile
     wend
 
 	halt

@@ -6,8 +6,8 @@ matrix_ai:
 rsect move_left
 
 slide_row_left>
-	ldi r0, 0 # адрес первой ячейки
-	ldi r1, 0 # адрес первой ячейки
+	ldi r0, 0 # address of the first tile
+	ldi r1, 0 # address of the first tile
 	ldi r3, 0
 	ldi r7, 0 # amount of empty tiles
 	while
@@ -17,20 +17,24 @@ slide_row_left>
 		if
 			tst r2
 		is nz
-			ldi r6, 1 # set flag that matrix has changed
-			stb r5, r1, r3 # clear tile
-			stb r5, r0, r2 # move non-zero tile to the first
-			add r0, 1 # сдвигаем r0 на следующую ячейку
+			if
+				cmp r0, r1
+			is ne
+				ldi r6, 1 # set flag that matrix has changed
+				stb r5, r1, r3 # clear tile
+				stb r5, r0, r2 # move non-zero tile to the first
+			fi
+			add r0, 1 # move r0 to the next tile
 		else 
 			inc r7
 		fi
-		add r1, 1 # сдвигаем r1 на следующую ячейку
+		add r1, 1 # move r1 to the next tile
 	wend
 	rts
 
 merge_row_left>
-	ldi r0, 0 # адрес первой ячейки
-	ldi r1, 1 # адрес второй ячейки
+	ldi r0, 0 # address of the first tile
+	ldi r1, 1 # address of the second tile
 	ldi r7, 0 # has row been changed
 	while
 		cmp r1, 4
@@ -84,6 +88,13 @@ move_left>
 		jsr process_row_left
 		add r5, 4 # переходим на следующий ряд
 	wend
+	if
+		tst r6
+	is z
+		ldi r0, 0xff50
+		ldi r1, -1
+		stw r0, r1
+	fi
 	rts
 
 # такая же функция как и move_left, только адрес поля другой
@@ -99,6 +110,13 @@ move_left_ai>
 		jsr process_row_left
 		add r5, 4 # переходим на следующий ряд
 	wend
+	if
+		tst r6
+	is z
+		ldi r0, 0xff50
+		ldi r1, -1
+		stw r0, r1
+	fi
 	rts
 
 end.

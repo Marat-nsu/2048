@@ -17,9 +17,13 @@ slide_row_up>
 		if
 			tst r2
 		is nz
-			ldi r6, 1 # set flag that matrix has changed
-			stb r5, r1, r3 # clear tile
-			stb r5, r0, r2 # move non-zero tile to the first
+			if
+				cmp r0, r1
+			is ne
+				ldi r6, 1 # set flag that matrix has changed
+				stb r5, r1, r3 # clear tile
+				stb r5, r0, r2 # move non-zero tile to the first
+			fi
 			add r0, 4 # сдвигаем r0 на следующую ячейку
 		else 
 			inc r7
@@ -84,6 +88,13 @@ move_up>
 		jsr process_row_up
 		add r5, 1 # переходим на следующий ряд
 	wend
+	if
+		tst r6
+	is z
+		ldi r0, 0xff56
+		ldi r1, -1
+		stw r0, r1
+	fi
 	rts
 
 move_up_ai>
@@ -98,6 +109,13 @@ move_up_ai>
 		jsr process_row_up
 		add r5, 1 # переходим на следующий ряд
 	wend
+	if
+		tst r6
+	is z
+		ldi r0, 0xff56
+		ldi r1, -1
+		stw r0, r1
+	fi
 	rts
 
 end.

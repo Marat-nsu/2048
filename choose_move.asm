@@ -50,6 +50,11 @@ choose_move>
         if
             cmp r3, r2
         is ls
+            if
+                cmp r2, -1 # this move does nothing
+            is eq
+                continue
+            fi
             move r5, r4 #address of max value
         fi
         add r1, 2
