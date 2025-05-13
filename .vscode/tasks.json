@@ -1,0 +1,27 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Compile CdM-16",
+			"type": "cocas",
+			"target": "cdm16",
+			"sources": [
+				"/Users/marat/projects/2048/Timofeev_Maksunova_Peshkov_24214_choose_move.asm",
+				"/Users/marat/projects/2048/Timofeev_Maksunova_Peshkov_24214_eval_collective.asm",
+				"/Users/marat/projects/2048/Timofeev_Maksunova_Peshkov_24214_eval_individual.asm",
+				"/Users/marat/projects/2048/Timofeev_Maksunova_Peshkov_24214_main.asm",
+				"/Users/marat/projects/2048/Timofeev_Maksunova_Peshkov_24214_move_ai.asm",
+				"/Users/marat/projects/2048/Timofeev_Maksunova_Peshkov_24214_move_down.asm",
+				"/Users/marat/projects/2048/Timofeev_Maksunova_Peshkov_24214_move_left.asm",
+				"/Users/marat/projects/2048/Timofeev_Maksunova_Peshkov_24214_move_right.asm",
+				"/Users/marat/projects/2048/Timofeev_Maksunova_Peshkov_24214_move_up.asm",
+				"/Users/marat/projects/2048/Timofeev_Maksunova_Peshkov_24214_place_tile.asm",
+				"/Users/marat/projects/2048/Timofeev_Maksunova_Peshkov_24214_sync_fields.asm"
+			],
+			"artifacts": {
+				"image": "${workspaceFolder}${/}build${/}out.img",
+				"debug": "${workspaceFolder}${/}build${/}out.dbg.json"
+			}
+		}
+	]
+}

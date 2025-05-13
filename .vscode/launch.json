@@ -1,0 +1,18 @@
+{
+	"configurations": [
+		{
+			"name": "Debug CdM-16 with Von Neumann architecture",
+			"type": "cdm",
+			"request": "launch",
+			"address": "ws://localhost:7001",
+			"target": "cdm16",
+			"architecture": "vonNeumann",
+			"environment": "external",
+			"artifacts": {
+				"image": "${workspaceFolder}${/}build${/}out.img",
+				"debug": "${workspaceFolder}${/}build${/}out.dbg.json"
+			},
+			"preLaunchTask": "Compile CdM-16"
+		}
+	]
+}
