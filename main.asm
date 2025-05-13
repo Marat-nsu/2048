@@ -4,6 +4,9 @@ is_game_over:
 asect 0xfefa
 direction:
 
+asect 0xfef8
+is_ai:
+
 asect 0
 main: ext               # Declare labels
 
@@ -65,7 +68,66 @@ main>
         ldb r0, r0
         tst r0
     stays z
-        jsr move_ai
+        if
+            ldi r0, is_ai
+            ldw r0, r0
+            tst r0
+        is nz
+            jsr move_ai
+        else
+            while
+                ldi r0, is_ai
+                ldw r0, r0
+                tst r0
+            stays z
+                ldi r0, direction
+                ldw r0, r0
+                if
+                    tst r0
+                is z
+                    continue
+                fi
+
+                # Влево
+                if
+                    cmp r0, 1
+                is eq
+                    jsr move_left
+                    break
+                fi
+
+                # Вправо
+                if
+                    cmp r0, 2
+                is eq
+                    jsr move_right
+                    break
+                fi
+
+                # Вниз
+                if
+                    cmp r0, 4
+                is eq
+                    jsr move_down
+                    break
+                fi
+
+                # Вверх
+                if
+                    cmp r0, 8
+                is eq
+                    jsr move_up
+                    break
+                fi
+            wend
+            if
+                ldi r0, is_ai
+                ldw r0, r0
+                tst r0
+            is nz
+                jsr move_ai
+            fi
+        fi
         jsr place_tile
     wend
 

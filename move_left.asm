@@ -77,7 +77,7 @@ move_left>
 	# r6 has matrix changed
 	ldi r5, matrix # адрес обрабатываемого ряда
 	move r5, r4
-	add r4, 10 # адрес конца матрицы
+	add r4, 0x10 # адрес конца матрицы
 	while
 		cmp r5, r4
 	stays lt
@@ -92,7 +92,7 @@ move_left_ai>
 	# r6 has matrix changed
 	ldi r5, matrix_ai # адрес обрабатываемого ряда
 	move r5, r4
-	add r4, 10 # адрес конца матрицы
+	add r4, 0x10 # адрес конца матрицы
 	while
 		cmp r5, r4
 	stays lt
