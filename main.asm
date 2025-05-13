@@ -8,19 +8,16 @@ main: ext               # Declare labels
 
 
 
-default_handler1: ext    # as external
-default_handler2: ext
-default_handler3: ext
-default_handler4: ext
+default_handler: ext    # as external
 
 # Interrupt vector table (IVT)
 # Place a vector to program start and
 # map all internal exceptions to default_handler
 dc main, 0              # Startup/Reset vector
-dc default_handler1, 0   # Unaligned SP
-dc default_handler2, 0   # Unaligned PC
-dc default_handler3, 0   # Invalid instruction
-dc default_handler4, 0   # Double fault
+dc default_handler, 0   # Unaligned SP
+dc default_handler, 0   # Unaligned PC
+dc default_handler, 0   # Invalid instruction
+dc default_handler, 0   # Double fault
 align 0x80              # Reserve space for the rest 
                         # of IVT
 
@@ -28,46 +25,40 @@ align 0x80              # Reserve space for the rest
 rsect exc_handlers
 
 # This handler halts processor
-default_handler1>
-    ldi r0, 0xff00
-    ldi r1, 1
-    ldi r2, 0
-    stb r0, r2, r1
+default_handler>
     halt
-
-default_handler2>
-    ldi r0, 0xff00
-    ldi r1, 2
-    ldi r2, 0
-    stb r0, r2, r1
-    halt
-
-default_handler3>
-    ldi r0, 0xff00
-    ldi r1, 3
-    ldi r2, 0
-    stb r0, r2, r1
-    halt
-
-default_handler4>
-    ldi r0, 0xff00
-    ldi r1, 4
-    ldi r2, 0
-    stb r0, r2, r1
-    halt
-
 
 # Main program section
 rsect main
 
+#
+# БАЗА
+#
+
 choose_move: ext
 place_tile: ext
+
+#
+# ХОД ИГРОКА
+#
+
 move_left: ext
 move_right: ext
-eval_collective: ext
 move_down: ext
 move_up: ext
+
+#
+# ИИ
+#
+
+move_left_ai: ext
+move_right_ai: ext
+move_down_ai: ext
+move_up_ai: ext
+
+eval_collective: ext
 eval_individual: ext
+
 
 main>
     jsr place_tile

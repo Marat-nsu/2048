@@ -1,32 +1,9 @@
 asect 0xff00
 matrix:
+asect 0xff20
+matrix_ai:
 
 rsect move_right
-
-slide_row_right_offset>
-	ldi r0, 3 # адрес первой ячейки
-	ldi r1, 3 # адрес первой ячейки
-	ldi r3, 0 # helper 0 for clearing tile
-	ldi r7, 0
-	while
-		cmp r1, 0
-	stays ge
-		ldb r5, r1, r2
-		if
-			tst r2
-		is nz
-			ldi r6, 1 # set flag that matrix has changed
-			add r5, 0x20
-			stb r5, r1, r3 # clear tile
-			stb r5, r0, r2 # move non-zero tile to the first
-			sub r5, 0x20
-			add r0, -1 # сдвигаем r0 на следующую ячейку
-		else
-			inc r7
-		fi
-		add r1, -1 # сдвигаем r1 на следующую ячейку
-	wend
-	rts
 
 slide_row_right>
 	ldi r0, 3 # адрес первой ячейки
@@ -52,7 +29,6 @@ slide_row_right>
 	rts
 
 merge_row_right>
-	add r5, 0x20
 	ldi r0, 3 # адрес первой ячейки
 	ldi r1, 2 # адрес второй ячейки
 	ldi r7, 0
@@ -78,11 +54,10 @@ merge_row_right>
 		add r0, -1 # переходим на следующую ячейку
 		add r1, -1 # переходим на следующую ячейку
 	wend
-	sub r5, 0x20
 	rts
 
 process_row_right>
-	jsr slide_row_right_offset
+	jsr slide_row_right
 	if
 		cmp r7, 4
 	is eq
@@ -94,16 +69,15 @@ process_row_right>
 	is z
 		rts
 	fi
-	add r5, 0x20
 	jsr slide_row_right
-	sub r5, 0x20
 	rts
 
 move_right>
 	ldi r6, 0
 	# r6 has matrix changed
 	ldi r5, matrix # адрес обрабатываемого ряда
-	ldi r4, 0xff10 # адрес конца матрицы
+	move r5, r4
+	add r4, 10 # адрес конца матрицы
 	while
 		cmp r5, r4
 	stays lt
@@ -111,5 +85,20 @@ move_right>
 		add r5, 4 # переходим на следующий ряд
 	wend
 	rts
+
+move_right_ai>
+	ldi r6, 0
+	# r6 has matrix changed
+	ldi r5, matrix_ai # адрес обрабатываемого ряда
+	move r5, r4
+	add r4, 10 # адрес конца матрицы
+	while
+		cmp r5, r4
+	stays lt
+		jsr process_row_right
+		add r5, 4 # переходим на следующий ряд
+	wend
+	rts
+
 
 end.
